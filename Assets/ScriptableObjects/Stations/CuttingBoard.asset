@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: CuttingBoard
   <Ingredients>k__BackingField:
-  - {fileID: 11400000, guid: 9f6971b58da719248825b39e131e235b, type: 2}
+  - {fileID: 11400000, guid: 1aa974eddf3736343b2306d0229df2d6, type: 2}
   <Recipes>k__BackingField:
   - {fileID: 11400000, guid: 4c362bce33060d449898b8d3e1c9072a, type: 2}

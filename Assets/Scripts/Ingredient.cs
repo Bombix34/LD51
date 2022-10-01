@@ -11,7 +11,29 @@ public class Ingredient: ScriptableObject
     [field: SerializeField]
     public Rarity Rarity { get; private set; }
     [field: SerializeField]
-    public bool IsEdible { get; private set; }
-    [field: SerializeField]
     public int Score { get; private set; }
+
+#if UNITY_EDITOR
+
+    public void SetName(string name)
+    {
+        Name = name;
+    }
+
+    public void SetCategories(List<Category> categories)
+    {
+        Categories = categories;
+    }
+
+    public void SetQuality(Rarity rarity)
+    {
+        Rarity = rarity;
+    }
+
+    public void SetScore(int score)
+    {
+        Score = score;
+    }
+
+#endif
 }
