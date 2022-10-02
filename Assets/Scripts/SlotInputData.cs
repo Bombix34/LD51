@@ -16,3 +16,18 @@ public class SlotInputData : ScriptableObject
 
     public KeyCode useStationInput;
 }
+
+public enum InputType
+{
+    ingredientSlot1,
+    ingredientSlot2,
+    ingredientSlot3,
+    ingredientSlot4,
+    ingredientSlot5,
+    ingredientSlot6,
+    cutStation,
+    cookStation,
+    mixStation,
+    fridgeStation,
+    deliveryStation
+}

@@ -7,6 +7,11 @@ public class PlayerCursor : MonoBehaviour
     public IngredientSlot IngredientDraggedSlot { get; set; }
     [SerializeField] private LayerMask layerMask;
 
+    private void Start()
+    {
+        Timer.Instance.OnStartTurn += ResetDraggedObject;
+    }
+
     private void Update()
     {
         //drag n drop state
@@ -68,7 +73,6 @@ public class PlayerCursor : MonoBehaviour
             currentSlot.IngredientOnSlot = ingredientOnSlot;
             currentSlot.PutIngredientOnSlot();
         }
-
     }
 
     public GameObject TryFindInteractableElement()
@@ -80,5 +84,14 @@ public class PlayerCursor : MonoBehaviour
             toReturn = hitData.collider.gameObject;
         }
         return toReturn;
+    }
+
+    private void ResetDraggedObject()
+    {
+        if(IngredientDraggedSlot != null && !IngredientDraggedSlot.IsEmpty)
+        {
+            IngredientDraggedSlot.PutIngredientOnSlot();
+        }
+        IngredientDraggedSlot = null;
     }
 }

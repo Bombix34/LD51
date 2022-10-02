@@ -18,5 +18,5 @@ MonoBehaviour:
   cookStationInput: 122
   mixStationInput: 101
   frigdeStationInput: 114
-  serviceStationInput: 32
+  deliveryStationInput: 32
   useStationInput: 304

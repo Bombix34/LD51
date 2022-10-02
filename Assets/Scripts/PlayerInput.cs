@@ -15,10 +15,17 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private PlayerStation deliveryStation;
     [SerializeField] private PlayerStation fridgeStation;
 
+    public static Action OnPlayerPressTab;
+
     public bool IsTryingToUseStation = false;
+
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            OnPlayerPressTab?.Invoke();
+        }
         PlayerIngredientSlotInputUpdate();
         PlayerStationInputUpdate();
         IsTryingToUseStation = Input.GetKey(inputData.useStationInput);

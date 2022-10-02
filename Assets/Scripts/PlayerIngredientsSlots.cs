@@ -65,7 +65,6 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
     {
         foreach (var ingredient in Ingredients)
         {
-            Debug.Log(ingredient);
             ingredient.DestroyImmediate();
         }
         Ingredients.Clear();
