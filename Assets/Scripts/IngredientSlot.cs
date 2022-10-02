@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class IngredientSlot : MonoBehaviour
 {
     [SerializeField] private Transform ingredientOnSlot;
+
+    public Action<Ingredient> OnAddIngredient { get; internal set; }
+    public Action<Ingredient> OnRemoveIngredient { get; internal set; }
 
     private void Start()
     {
@@ -30,10 +34,26 @@ public class IngredientSlot : MonoBehaviour
     }
 
     public Transform IngredientOnSlot 
-    { 
-        set { ingredientOnSlot = value; }
+    {
+        set
+        {
+            if(value == null)
+            {
+                OnRemoveIngredient?.Invoke(ingredientOnSlot?.GetComponent<Ingredient>());
+            }
+            else
+            {
+                OnAddIngredient?.Invoke(value.GetComponent<Ingredient>());
+            }
+            ingredientOnSlot = value; 
+        }
         get => ingredientOnSlot;
     }
 
-    public bool IsEmpty{get=> ingredientOnSlot==null;}
+    public bool IsEmpty => ingredientOnSlot == null;
+
+    public void CleanIngredient()
+    {
+        ingredientOnSlot = null;
+    }
 }

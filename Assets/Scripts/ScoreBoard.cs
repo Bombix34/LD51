@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -8,7 +9,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     private const string INGREDIENTS_PATH = "Assets/ScriptableObjects/Ingredients/";
     public List<IngredientScriptableObject> UnlockedIngredients = new List<IngredientScriptableObject>();
-    public List<Station> UnlockedStations = new List<Station>();
+    public List<StationScriptableObject> UnlockedStations = new List<StationScriptableObject>();
     public int IngredientDrawSize { get; private set; }
 
     public List<ScoreLevel> ScoreLevels { get; set; } = new List<ScoreLevel>
@@ -29,6 +30,12 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     public void AddScore(int score)
     {
+        if(score <= 0)
+        {
+            TakeDamage();
+            return;
+        }
+
         var newScore = Score + score;
         while (newScore >= NextScoreLevel.Score)
         {
@@ -48,7 +55,8 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     private void UnlockIngredient(string ingredientName)
     {
-        var ingredient = AssetDatabase.LoadAssetAtPath<IngredientScriptableObject>(INGREDIENTS_PATH + ingredientName + ".asset");
+        var ingredient = AssetDatabase.LoadAssetAtPath<IngredientScriptableObject>(INGREDIENTS_PATH
+            + ingredientName + ".asset");
         UnlockedIngredients.Add(ingredient);
         newlyAddedIngredients.Add(ingredient);
     }
@@ -65,6 +73,11 @@ public class ScoreBoard : Singleton<ScoreBoard>
         newlyAddedIngredients.Clear();
 
         return newlyAddedIngredientsToReturn;
+    }
+
+    internal void TakeDamage()
+    {
+        //TODO LATER
     }
 }
 

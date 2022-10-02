@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIngredientsSlots : MonoBehaviour
+public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
 {
     [SerializeField] private List<IngredientSlot> slots;
 

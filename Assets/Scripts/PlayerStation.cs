@@ -6,6 +6,21 @@ using System.Linq;
 public class PlayerStation : MonoBehaviour
 {
     [SerializeField] private List<IngredientSlot> stationSlots;
+    
+    [field: SerializeField]
+    public StationScriptableObject StationSo { get; set; }
+
+    void Start()
+    {
+        stationSlots = GetComponentsInChildren<IngredientSlot>().ToList();
+        Timer.Instance.OnStartTurn += StationSo.HandleNewTurn;
+        foreach (var slot in stationSlots)
+        {
+            slot.OnAddIngredient += StationSo.AddIngredient;
+            slot.OnRemoveIngredient += StationSo.RemoveIngredient;
+            StationSo.OnCleanStation += slot.CleanIngredient;
+        }
+    }
 
     public void AddIngredientToStation(Transform ingredient)
     {
