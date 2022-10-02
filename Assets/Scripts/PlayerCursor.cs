@@ -46,6 +46,11 @@ public class PlayerCursor : MonoBehaviour
         }
         if(slotClicked.GetComponent<IngredientSlot>().IsEmpty)
             return;
+
+        if(!slotClicked.transform.parent.GetComponent<PlayerStation>()?.StationSo.CanRemoveIngredient() ?? false)
+        {
+            return;
+        }
         IngredientDraggedSlot = slotClicked.GetComponent<IngredientSlot>();
         IngredientDraggedSlot.SelectIngredient();
     }

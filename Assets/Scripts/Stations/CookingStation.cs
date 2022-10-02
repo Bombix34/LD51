@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CookingStation", menuName = "ScriptableObjects/Station/CookingStation", order = 1)]
 public class CookingStation : StationScriptableObject
 {
+    private Coroutine cookWithDelayCoroutine;
+
     [field: SerializeField]
     public float CookingDuration { get; private set; } = 2f;
     public bool CookingOngoing { get; private set; }
@@ -31,7 +33,7 @@ public class CookingStation : StationScriptableObject
         {
             return;
         }
-        ScoreBoard.Instance.StartCoroutine(CookWithDelay(spawnPosition));
+        cookWithDelayCoroutine = ScoreBoard.Instance.StartCoroutine(CookWithDelay(spawnPosition));
     }
     IEnumerator CookWithDelay(Vector2 spawnPosition)
     {
@@ -44,5 +46,15 @@ public class CookingStation : StationScriptableObject
         }
         base.Cook(spawnPosition);
         CookingOngoing = false;
+    }
+
+    public override void HandleNewTurn()
+    {
+        CookingOngoing = false;
+        if (cookWithDelayCoroutine != null)
+        {
+            ScoreBoard.Instance.StopCoroutine(cookWithDelayCoroutine);
+        }
+        base.HandleNewTurn();
     }
 }

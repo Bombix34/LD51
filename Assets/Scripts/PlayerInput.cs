@@ -148,8 +148,11 @@ public class PlayerInput : MonoBehaviour
         }
         else
         {
-            playerIngredientsSlots.FillSlots(station.StationIngredients);
-            station.RemoveIngredientReferences();
+            if (station.StationSo.CanRemoveIngredient())
+            {
+                playerIngredientsSlots.FillSlots(station.StationIngredients);
+                station.RemoveIngredientReferences();
+            }
         }
     }
 }
