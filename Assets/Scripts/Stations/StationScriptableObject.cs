@@ -120,11 +120,11 @@ public abstract class StationScriptableObject : ScriptableObject
         {
             //TODO plat douteux
             var ingredient = AssetDatabase.LoadAssetAtPath<IngredientScriptableObject>(INGREDIENTS_PATH + "Farine" + ".asset");
-            KitchenCounter.Instance.GenerateIngredient(ingredient);
+            PlayerIngredientsSlots.Instance.GenerateIngredient(ingredient);
         }
         else
         {
-            KitchenCounter.Instance.GenerateIngredient(recipe.IngredientProduced);
+            PlayerIngredientsSlots.Instance.GenerateIngredient(recipe.IngredientProduced);
         }
 
 
