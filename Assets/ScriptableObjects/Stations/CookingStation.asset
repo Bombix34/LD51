@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0049980486e8d34dab6e67702cf781f, type: 3}
   m_Name: CookingStation
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
+  <Name>k__BackingField: CookingStation
   <Ingredients>k__BackingField: []
-  <Recipes>k__BackingField:
-  - {fileID: 11400000, guid: 4c362bce33060d449898b8d3e1c9072a, type: 2}
+  <Recipes>k__BackingField: []
   <CookingDuration>k__BackingField: 2

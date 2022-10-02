@@ -6,10 +6,10 @@ using UnityEngine;
 public class Recipe : ScriptableObject
 {
     [field: SerializeField]
-    public List<IngredientScriptableObject> StrictIngredients { get; set; }
+    public List<IngredientScriptableObject> StrictIngredients { get; set; } = new List<IngredientScriptableObject>();
 
     [field: SerializeField]
-    public List<Category> InterchangeableIngredientsCategory { get; set; }
+    public List<Category> InterchangeableIngredientsCategory { get; set; } = new List<Category>();
 
     [field: SerializeField]
     public IngredientScriptableObject IngredientProduced { get; set; }

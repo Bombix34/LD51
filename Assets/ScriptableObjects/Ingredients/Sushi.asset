@@ -15,5 +15,5 @@ MonoBehaviour:
   <Name>k__BackingField: Sushi
   <Categories>k__BackingField: 0c000000090000000a000000
   <Rarity>k__BackingField: 2
-  <Score>k__BackingField: 0
-  <Sprite>k__BackingField: {fileID: 7146553180955159659, guid: c1fb72876dee02846a285c9bf2816a18, type: 3}
+  <Score>k__BackingField: 50
+  <Sprite>k__BackingField: {fileID: -2036440820868943663, guid: c1fb72876dee02846a285c9bf2816a18, type: 3}
