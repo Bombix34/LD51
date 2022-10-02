@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tomate au four
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Tomate au four
-  <Categories>k__BackingField: 00000000
+  <Categories>k__BackingField: 0100000000000000
   <Rarity>k__BackingField: 1
-  <Score>k__BackingField: -1
+  <Score>k__BackingField: 0

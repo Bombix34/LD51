@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8322c82d371c8d84a828cd8f812364db, type: 3}
-  m_Name: "Boeuf hach\xE9 cru"
+  m_Name: Steak hache
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: "Boeuf hach\xE9 cru"
-  <Categories>k__BackingField: 00000000
-  <Rarity>k__BackingField: 1
-  <Score>k__BackingField: -1
+  <Name>k__BackingField: Steak hache
+  <Categories>k__BackingField: 060000000500000003000000
+  <Rarity>k__BackingField: 2
+  <Score>k__BackingField: 0

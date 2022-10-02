@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Saumon cuit
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Saumon cuit
-  <Categories>k__BackingField: 00000000
+  <Categories>k__BackingField: 0b0000000a000000
   <Rarity>k__BackingField: 1
-  <Score>k__BackingField: -1
+  <Score>k__BackingField: 0

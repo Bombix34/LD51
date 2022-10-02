@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8322c82d371c8d84a828cd8f812364db, type: 3}
-  m_Name: "Spaghettis \xE0 la sauce"
+  m_Name: Boeuf hache cru
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: "Spaghettis \xE0 la sauce"
-  <Categories>k__BackingField: 00000000
-  <Rarity>k__BackingField: 3
+  <Name>k__BackingField: Boeuf hache cru
+  <Categories>k__BackingField: 040000000600000003000000
+  <Rarity>k__BackingField: 1
   <Score>k__BackingField: -1

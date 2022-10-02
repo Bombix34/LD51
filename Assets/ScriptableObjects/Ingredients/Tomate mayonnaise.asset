@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tomate mayonnaise
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Tomate mayonnaise
-  <Categories>k__BackingField: 00000000
+  <Categories>k__BackingField: 0100000002000000
   <Rarity>k__BackingField: 3
-  <Score>k__BackingField: -1
+  <Score>k__BackingField: 0

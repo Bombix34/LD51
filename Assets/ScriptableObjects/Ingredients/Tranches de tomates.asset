@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tranches de tomates
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Tranches de tomates
-  <Categories>k__BackingField: 00000000
+  <Categories>k__BackingField: 0000000001000000
   <Rarity>k__BackingField: 1
-  <Score>k__BackingField: -1
+  <Score>k__BackingField: 0
