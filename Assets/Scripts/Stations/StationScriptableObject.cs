@@ -17,6 +17,11 @@ public abstract class StationScriptableObject : ScriptableObject
     protected List<Recipe> Recipes { get; set; }
     public Action OnCleanStation { get; internal set; }
 
+    public virtual void OnEnable()
+    {
+        Ingredients = new List<Ingredient>();
+    }
+
     public void AddIngredient(Ingredient ingredient)
     {
         if (!CanAddIngredient())
