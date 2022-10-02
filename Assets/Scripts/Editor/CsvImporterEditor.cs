@@ -1,5 +1,6 @@
 using CsvHelper;
 using CsvHelper.Configuration;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -50,6 +51,8 @@ public class CsvImporterEditor : EditorWindow
             Directory.Delete(PATH_TO_INGREDIENTS, true);
         }
         Directory.CreateDirectory(PATH_TO_INGREDIENTS);
+
+        var sprites = AssetDatabase.LoadAllAssetsAtPath(Path.Combine(PATH_TO_SPRITES, $"Ingredients.png")).OfType<Sprite>().ToList();
 
         foreach (var ingredient in ingredients)
         {
@@ -126,12 +129,23 @@ public class CsvImporterEditor : EditorWindow
                 ingredientScriptableObject.SetScore(-1);
             }
 
-            ingredientScriptableObject.SetSprite(AssetDatabase.LoadAssetAtPath<Sprite>(Path.Combine(PATH_TO_SPRITES, $"{ingredientScriptableObject.Name}.png")));
-            if (ingredientScriptableObject.Sprite == null)
+            try
             {
-                Debug.LogWarning($"No sprite found for {ingredientScriptableObject.Name}");
-                ingredientScriptableObject.SetSprite(AssetDatabase.LoadAssetAtPath<Sprite>(Path.Combine(PATH_TO_SPRITES, $"NO_TEXTURE.png")));
+                ingredientScriptableObject.SetSprite(sprites[int.Parse(ingredient.PositionDessin)]);
             }
+            catch (System.Exception)
+            {
+
+            }
+            finally
+            {
+                if (ingredientScriptableObject.Sprite == null)
+                {
+                    Debug.LogWarning($"No sprite found for {ingredientScriptableObject.Name} at position {ingredient.PositionDessin}");
+                    ingredientScriptableObject.SetSprite(AssetDatabase.LoadAssetAtPath<Sprite>(Path.Combine(PATH_TO_SPRITES, "NO_TEXTURE.png")));
+                }
+            }
+
 
 
             AssetDatabase.CreateAsset(ingredientScriptableObject, Path.Combine(PATH_TO_INGREDIENTS, $"{ingredientScriptableObject.Name}.asset"));

@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public enum Category
 {
     VEGETABLE,
@@ -17,5 +13,4 @@ public enum Category
     FISH,
     COOKED_FISH,
     RICE
-
 }

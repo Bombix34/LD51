@@ -7,6 +7,7 @@ public class IngredientCsvModel
     public string Qualite { get; set; }
     public string Score { get; set; }
     public string Station { get; set; }
+    public string PositionDessin { get; set; }
 }
 
 public class IngredientCsvModelClassMap : ClassMap<IngredientCsvModel>
@@ -18,5 +19,6 @@ public class IngredientCsvModelClassMap : ClassMap<IngredientCsvModel>
         Map(m => m.Qualite).Name("Qualite");
         Map(m => m.Score).Name("Score");
         Map(m => m.Station).Name("Station");
+        Map(m => m.PositionDessin).Name("PositionDessin");
     }
 }
