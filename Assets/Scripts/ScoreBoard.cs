@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using System;
 
 public class ScoreBoard : Singleton<ScoreBoard>
 {
@@ -26,6 +27,9 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     private readonly List<IngredientScriptableObject> newlyAddedIngredients = new List<IngredientScriptableObject>();
 
+    public Action<int> OnAddScore;
+    public Action<ScoreLevel> OnReachingScoreStep;
+
     void Start()
     {
         UnlockIngredient("Tomate crue");
@@ -43,6 +47,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
         }
 
         Score += score;
+        OnAddScore?.Invoke(score);
         while (NextScoreLevel != null && Score >= NextScoreLevel.Score)
         {
             
@@ -65,6 +70,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
             }
 
             NextScoreLevel = ScoreLevels[nextScoreLevelIndex];
+            OnReachingScoreStep?.Invoke(NextScoreLevel);
         }
     }
 
