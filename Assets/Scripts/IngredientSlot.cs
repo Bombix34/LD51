@@ -30,7 +30,7 @@ public class IngredientSlot : MonoBehaviour
         if(ingredientOnSlot==null)
             return;
         ingredientOnSlot.GetComponent<SpriteRenderer>().sortingOrder = 5;
-        ingredientOnSlot.DOScale(1.2f, 0.2f);
+        ingredientOnSlot.DOScale(1.3f, 0.2f);
     }
 
     public Transform IngredientOnSlot 

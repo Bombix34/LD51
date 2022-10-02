@@ -1397,6 +1397,10 @@ PrefabInstance:
       value: PlayerManager
       objectReference: {fileID: 0}
     - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+      propertyPath: inputData
+      value: 
+      objectReference: {fileID: 11400000, guid: 37b78bcddda467d4282bb6ded7895b23, type: 2}
+    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
       propertyPath: cutStation
       value: 
       objectReference: {fileID: 3115619387265876592}

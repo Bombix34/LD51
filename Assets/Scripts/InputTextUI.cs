@@ -13,6 +13,14 @@ public class InputTextUI : MonoBehaviour
 
     private void Start()
     {
+        InitText();
+        textUI.gameObject.transform.localScale = Vector3.zero;
+        PlayerInput.OnPlayerPressTab += OnPlayerPressDisplayInput;
+        PlayerInput.OnPlayerSetInputData += SwitchData;
+    }
+
+    private void InitText()
+    {
         switch(concernedInput)
         {
             case InputType.ingredientSlot1:
@@ -45,9 +53,10 @@ public class InputTextUI : MonoBehaviour
             case InputType.fridgeStation:
                 textUI.text = inputData.frigdeStationInput.ToString();
                 break;
+            case InputType.mixStation:
+                textUI.text = inputData.mixStationInput.ToString();
+                break;
         }
-        textUI.gameObject.transform.localScale = Vector3.zero;
-        PlayerInput.OnPlayerPressTab += OnPlayerPressDisplayInput;
     }
 
     private void OnPlayerPressDisplayInput()
@@ -61,5 +70,11 @@ public class InputTextUI : MonoBehaviour
         {
             textUI.gameObject.transform.DOScale(0f,0.2f);
         }
+    }
+
+    private void SwitchData(SlotInputData newData)
+    {
+        inputData = newData;
+        InitText();
     }
 }

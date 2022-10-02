@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientSlotInputs: 690000006f000000700000006b0000006c0000006d000000
   ingredientSlotPadNumInputs: 010100000201000003010000040100000501000006010000
-  cutStationInput: 97
-  cookStationInput: 122
+  cutStationInput: 122
+  cookStationInput: 97
   mixStationInput: 101
-  frigdeStationInput: 114
+  frigdeStationInput: 100
   deliveryStationInput: 32
   useStationInput: 304

@@ -16,9 +16,14 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private PlayerStation fridgeStation;
 
     public static Action OnPlayerPressTab;
+    public static Action<SlotInputData> OnPlayerSetInputData;
 
     public bool IsTryingToUseStation = false;
 
+    private void Start()
+    {
+        OnPlayerSetInputData?.Invoke(inputData);
+    }
 
     private void Update()
     {
