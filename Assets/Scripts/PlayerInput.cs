@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -8,11 +9,16 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private SlotInputData inputData;
     [SerializeField] private PlayerIngredientsSlots playerIngredientsSlots;
     [SerializeField] private PlayerStation cookStation;
+    [SerializeField] private PlayerStation cutStation;
+
+    public bool IsTryingToUseStation = false;
 
     private void Update()
     {
         PlayerIngredientSlotInputUpdate();
         PlayerStationInputUpdate();
+        IsTryingToUseStation = Input.GetKey(inputData.useStationInput);
+        Debug.Log(IsTryingToUseStation);
     }
 
     private void PlayerIngredientSlotInputUpdate()
@@ -49,7 +55,25 @@ public class PlayerInput : MonoBehaviour
     {
         if(Input.GetKeyDown(inputData.cookStationInput))
         {
-            UpdateStation(cookStation);
+            if(IsTryingToUseStation)
+            {
+                cookStation.StationSo.Craft();
+            }
+            else
+            {
+                UpdateStation(cookStation);
+            }
+        }
+        if(Input.GetKeyDown(inputData.cutStationInput))
+        {
+            if(IsTryingToUseStation)
+            {
+                cutStation.StationSo.Craft();
+            }
+            else
+            {
+                UpdateStation(cutStation);
+            }
         }
         //AJOUTER LES AUTRES STATIONS ICI
     }
