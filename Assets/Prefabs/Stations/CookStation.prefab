@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2532783370508367092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 3115619386658047197}
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1285.604, y: -718.54}
-  m_SizeDelta: {x: 36.0804, y: 30}
+  m_AnchoredPosition: {x: -1285.6611, y: -719.93787}
+  m_SizeDelta: {x: 32.9091, y: 8.3071}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6658425942598859057
 CanvasRenderer:
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.14117648}
+  m_Color: {r: 0.54067284, g: 0.8490566, b: 0.5494838, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -405,6 +405,7 @@ MonoBehaviour:
   stationSlots:
   - {fileID: 7003965029293121781}
   - {fileID: 7003965028741138168}
+  useStationButton: {fileID: 2491744421602017547}
   <StationSo>k__BackingField: {fileID: 0}
 --- !u!1 &3115619387245848167
 GameObject:

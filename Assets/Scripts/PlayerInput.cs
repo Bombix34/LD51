@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using System;
 
 public class PlayerInput : MonoBehaviour
@@ -79,7 +80,8 @@ public class PlayerInput : MonoBehaviour
 
     public void PlayerStationUseButton(PlayerStation stationToUse)
     {
-        stationToUse.StationSo.Craft(stationToUse.transform.position);
+        if (EventSystem.current.IsPointerOverGameObject())
+            stationToUse.StationSo.Craft(stationToUse.transform.position);
     }
 
     private void UpdateStation(PlayerStation station)

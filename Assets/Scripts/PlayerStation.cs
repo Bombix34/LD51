@@ -2,23 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerStation : MonoBehaviour
 {
     [SerializeField] private List<IngredientSlot> stationSlots;
+    [SerializeField] private Button useStationButton;
+    [SerializeField] private int nbMinimumToUseStation=1;
     
     [field: SerializeField]
     public StationScriptableObject StationSo { get; set; }
 
-    void Start()
+    private void Start()
     {
+        useStationButton?.transform.DOScale(0f,0f);
         stationSlots = GetComponentsInChildren<IngredientSlot>().ToList();
         Timer.Instance.OnStartTurn += StationSo.HandleNewTurn;
         foreach (var slot in stationSlots)
         {
             slot.OnAddIngredient += StationSo.AddIngredient;
+            slot.OnAddIngredient += DisplayButton;
             slot.OnRemoveIngredient += StationSo.RemoveIngredient;
+            slot.OnRemoveIngredient += DisplayButton;
             StationSo.OnCleanStation += slot.CleanIngredient;
+            StationSo.OnCleanStation += ResetButton;
         }
     }
 
@@ -26,7 +34,7 @@ public class PlayerStation : MonoBehaviour
     {
         foreach(var slot in stationSlots)
         {
-            if(slot.IngredientOnSlot==null)
+            if(slot.IngredientOnSlot == null)
             {
                 slot.IngredientOnSlot = ingredient;
                 slot.PutIngredientOnSlot();
@@ -61,10 +69,27 @@ public class PlayerStation : MonoBehaviour
                 if(!slot.IsEmpty)
                 {
                     toReturn.Add(slot.IngredientOnSlot);
-                    Debug.Log(slot.IngredientOnSlot);
                 }
             }
             return toReturn;
         }
+    }
+
+    private void DisplayButton(Ingredient ingredient)
+    {
+       // Debug.Log(StationIngredients.Count);
+        if(StationIngredients.Count >= nbMinimumToUseStation)
+        {
+            useStationButton?.transform.DOScale(0f,0.3f);
+        }
+        else
+        {
+            useStationButton?.transform.DOScale(0.1f,0.3f);
+        }
+    }
+
+    private void ResetButton()
+    {
+            useStationButton?.transform.DOScale(0f ,0.3f);
     }
 }
