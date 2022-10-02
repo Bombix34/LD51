@@ -199,6 +199,7 @@ public class CsvImporterEditor : EditorWindow
         {
             var station = AssetDatabase.LoadAssetAtPath<StationScriptableObject>(file);
             station.CleanRecipes();
+            EditorUtility.SetDirty(station);
             StationScriptableObjects.Add(station);
         }
 
@@ -280,5 +281,6 @@ public class CsvImporterEditor : EditorWindow
                     break;
             }
         }
+        AssetDatabase.SaveAssets();
     }
 }

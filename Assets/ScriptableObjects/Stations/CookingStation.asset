@@ -14,5 +14,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: CookingStation
   <Ingredients>k__BackingField: []
-  <Recipes>k__BackingField: []
+  <Recipes>k__BackingField:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: db234563fa63f7e4da7d1c156df77351, type: 2}
+  - {fileID: 11400000, guid: 54906b8fddb388842b7ead4adc6cf52a, type: 2}
+  - {fileID: 11400000, guid: 35d9e36c734ff1a469582a29ad9035b3, type: 2}
+  - {fileID: 11400000, guid: 8d2455443aec5024ab6d980a893b5055, type: 2}
+  - {fileID: 11400000, guid: eab5b9ec28746264997d5ae0d8470ab9, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 6674055a3d934b843aab1c78157a1121, type: 2}
+  - {fileID: 11400000, guid: b5afa70e3c74ac0488d752b40a0bb7b3, type: 2}
+  - {fileID: 11400000, guid: 12e4a75f54eb81241933e8c42480ae5e, type: 2}
+  - {fileID: 11400000, guid: ada1c0a7cc23c51468438f008bff300e, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: ccb2b315ea9e2864b9c83438d375f789, type: 2}
+  - {fileID: 11400000, guid: 909a50085d9882e47bc8a2b5d1f4b108, type: 2}
+  - {fileID: 11400000, guid: b52b192b65beb7240913632cc5511381, type: 2}
+  - {fileID: 11400000, guid: ea60db648f21e1f4d97a523b12c24324, type: 2}
+  - {fileID: 11400000, guid: e87350c4c3b6a09469679c404ed4ed19, type: 2}
+  - {fileID: 11400000, guid: 70af4bbb54a93cf44bd4584a3680c941, type: 2}
+  - {fileID: 11400000, guid: 1d3cc1d1c19c0af4894c12d522e7ad50, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 670c1971e72258548a17efd41a04f4c2, type: 2}
+  - {fileID: 11400000, guid: 5687bc67c2cdc3d42970e9fbd0bf3806, type: 2}
+  - {fileID: 11400000, guid: 945923392db8447428a594ae9233ca2f, type: 2}
+  - {fileID: 11400000, guid: ecb2f9ffb984bf345a027ba9c521a567, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: ce9b09b8f3aff03418c6d10fe8bf02fe, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: f3a55dbb93928934e84db580a3521e56, type: 2}
+  - {fileID: 11400000, guid: beb407f4686c29d41aaf8da945df3bd7, type: 2}
+  - {fileID: 11400000, guid: 183a337b89087274cb37d00fe1566ff0, type: 2}
+  - {fileID: 11400000, guid: b5f6536621170f24ca5d041882453724, type: 2}
+  - {fileID: 11400000, guid: c0a27d09071eb764b88575a319be2f36, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 75b3dab0ffeb7d24a82f20137148a50d, type: 2}
+  - {fileID: 11400000, guid: c4831b54ff6ef1948adeaa2afe5950b4, type: 2}
+  - {fileID: 11400000, guid: d1f37b9879c4aaf4dae1f68ac29cb5c7, type: 2}
   <CookingDuration>k__BackingField: 2

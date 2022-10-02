@@ -14,4 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: MixingStation
   <Ingredients>k__BackingField: []
-  <Recipes>k__BackingField: []
+  <Recipes>k__BackingField:
+  - {fileID: 11400000, guid: df1c34f1347c50a448283d39ba5b5911, type: 2}
+  - {fileID: 11400000, guid: c3c757ce417fa494aa858f71ea5d6154, type: 2}
+  - {fileID: 11400000, guid: cbc323035f9f24845a2aadb87434ebc3, type: 2}
+  - {fileID: 11400000, guid: b3d78f2ed8481a745b898efe2cb5d138, type: 2}
+  - {fileID: 11400000, guid: 8adafc4070071eb43b7e435aef7f5280, type: 2}
+  - {fileID: 11400000, guid: 7583377e8597768469ab882a5b87df09, type: 2}
+  - {fileID: 11400000, guid: 633fd7fda6371a84283d3460eb1221c4, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: a13b6503e574840488fb2b21e51cfd8a, type: 2}
+  - {fileID: 11400000, guid: 438a6391611da2c42bcbd519d2148ccd, type: 2}
+  - {fileID: 11400000, guid: 3f1db03a319aab543aeb30c85660ea84, type: 2}
+  - {fileID: 11400000, guid: e70313d3218f8b54f92bf4e8ae2611c5, type: 2}
+  - {fileID: 11400000, guid: ecd190aea280e80498fa1ddf0c6d3c4b, type: 2}
+  - {fileID: 11400000, guid: 85d21589f872271499b4fb2e393cdad7, type: 2}
+  - {fileID: 11400000, guid: 75bfc5916b4fbca489bca4ee2027d3c1, type: 2}
