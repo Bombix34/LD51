@@ -6,13 +6,13 @@ using UnityEngine;
 public class Recipe : ScriptableObject
 {
     [field: SerializeField]
-    public List<Ingredient> StrictIngredients { get; set; }
+    public List<IngredientScriptableObject> StrictIngredients { get; set; }
 
     [field: SerializeField]
     public List<Category> InterchangeableIngredientsCategory { get; set; }
 
     [field: SerializeField]
-    public Ingredient IngredientProduced { get; set; }
+    public IngredientScriptableObject IngredientProduced { get; set; }
     public int IngredientsNecessaryCount => StrictIngredients.Count + InterchangeableIngredientsCategory.Count;
 
     /// <summary>
@@ -20,7 +20,7 @@ public class Recipe : ScriptableObject
     /// </summary>
     /// <param name="ingredients"></param>
     /// <returns>-1 si pas possible sinon le nombre représente le nombre d'interchangeable utilisé</returns>
-    public int CanBeDoneWith(List<Ingredient> ingredients)
+    public int CanBeDoneWith(List<IngredientScriptableObject> ingredients)
     {
         if(ingredients.Count != IngredientsNecessaryCount)
         {
@@ -32,7 +32,7 @@ public class Recipe : ScriptableObject
             return -1;
         }
 
-        var ingredientsCopy = new List<Ingredient>(ingredients);
+        var ingredientsCopy = new List<IngredientScriptableObject>(ingredients);
 
         foreach (var ingredient in StrictIngredients)
         {

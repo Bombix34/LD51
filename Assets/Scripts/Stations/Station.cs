@@ -8,11 +8,11 @@ public abstract class Station : ScriptableObject
     [field: SerializeField]
     public string Name { get; set; }
     [field: SerializeField]
-    private List<Ingredient> Ingredients { get; set; }
+    protected List<IngredientScriptableObject> Ingredients { get; private set; }
     [field: SerializeField]
     protected List<Recipe> Recipes { get; set; }
 
-    public void AddIngredient(Ingredient ingredient)
+    public void AddIngredient(IngredientScriptableObject ingredient)
     {
         Ingredients.Add(ingredient);
         OnAddIngredient();
@@ -23,7 +23,9 @@ public abstract class Station : ScriptableObject
         Ingredients.Clear();
     }
 
-    public abstract void OnAddIngredient();
+    public abstract bool CanAddIngredient();
+
+    public virtual void OnAddIngredient() { }
 
     private List<RecipeWithPriority> GetCraftableRecipes()
     {

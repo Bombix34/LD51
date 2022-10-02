@@ -52,7 +52,7 @@ public class CsvImporterEditor : EditorWindow
 
         foreach (var ingredient in ingredients)
         {
-            var ingredientScriptableObject = CreateInstance<Ingredient>();
+            var ingredientScriptableObject = CreateInstance<IngredientScriptableObject>();
 
             ingredientScriptableObject.SetName(ingredient.NomIngredient);
             ingredientScriptableObject.SetCategories(ingredient.Categories.Split(';')
