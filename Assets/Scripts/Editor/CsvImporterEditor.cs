@@ -13,6 +13,7 @@ public class CsvImporterEditor : EditorWindow
     private const string RECIPES_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJz0yhsCZ_koHUICcono0vbQhEIOzLH3u44UatbJCtUqZFxnK8Vgqyw_f_jTIY2JcJNLwW7hnAMV89/pub?gid=517237446&single=true&output=csv";
 
     private const string PATH_TO_INGREDIENTS = "Assets/ScriptableObjects/Ingredients/";
+    private const string PATH_TO_SPRITES = @"Assets\Sprites";
 
     [MenuItem("Window/CsvImporterEditor")]
     public static void ShowWindow()
@@ -123,6 +124,13 @@ public class CsvImporterEditor : EditorWindow
             else
             {
                 ingredientScriptableObject.SetScore(-1);
+            }
+
+            ingredientScriptableObject.SetSprite(AssetDatabase.LoadAssetAtPath<Sprite>(Path.Combine(PATH_TO_SPRITES, $"{ingredientScriptableObject.Name}.png")));
+            if (ingredientScriptableObject.Sprite == null)
+            {
+                Debug.LogWarning($"No sprite found for {ingredientScriptableObject.Name}");
+                ingredientScriptableObject.SetSprite(AssetDatabase.LoadAssetAtPath<Sprite>(Path.Combine(PATH_TO_SPRITES, $"NO_TEXTURE.png")));
             }
 
 

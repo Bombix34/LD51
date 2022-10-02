@@ -16,7 +16,6 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
     private void Start()
     {
         Timer.Instance.OnStartTurn += NewIngredientsDraw;
-        //NewIngredientsDraw();
     }
 
     public void FillSlots(List<Transform> newIngredients)
@@ -74,6 +73,7 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
         ingredient.transform.position = spawnPosition;
         var ingredientComponent = ingredient.GetComponent<Ingredient>();
         ingredientComponent.IngredientSo = ingredientSo;
+        ingredient.GetComponent<SpriteRenderer>().sprite = ingredientSo.Sprite;
         Ingredients.Add(ingredientComponent);
         FillSlots(new List<Transform> { ingredient.transform });
         return ingredientComponent;

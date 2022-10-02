@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ public class IngredientScriptableObject: ScriptableObject
     public Rarity Rarity { get; private set; }
     [field: SerializeField]
     public int Score { get; private set; }
+    [field: SerializeField]
+    public Sprite Sprite { get; private set; }
 
 #if UNITY_EDITOR
 
@@ -33,6 +36,11 @@ public class IngredientScriptableObject: ScriptableObject
     public void SetScore(int score)
     {
         Score = score;
+    }
+
+    public void SetSprite(Sprite sprite)
+    {
+        Sprite = sprite;
     }
 
 #endif
