@@ -114,6 +114,10 @@ public abstract class StationScriptableObject : ScriptableObject
 
     public void Craft(Vector2 spawnPosition)
     {
+        if (!Ingredients.Any())
+        {
+            return;
+        }
         var recipe = GetBestRecipe();
 
         if(recipe == null)
