@@ -8,11 +8,11 @@ public abstract class Station : ScriptableObject
     [field: SerializeField]
     public string Name { get; set; }
     [field: SerializeField]
-    protected List<IngredientScriptableObject> Ingredients { get; private set; }
+    protected List<Ingredient> Ingredients { get; private set; }
     [field: SerializeField]
     protected List<Recipe> Recipes { get; set; }
 
-    public void AddIngredient(IngredientScriptableObject ingredient)
+    public void AddIngredient(Ingredient ingredient)
     {
         Ingredients.Add(ingredient);
         OnAddIngredient();
@@ -20,6 +20,10 @@ public abstract class Station : ScriptableObject
 
     public void CleanIngredients()
     {
+        foreach (var ingredient in Ingredients)
+        {
+            DestroyImmediate(ingredient);
+        }
         Ingredients.Clear();
     }
 
@@ -32,7 +36,7 @@ public abstract class Station : ScriptableObject
         var recipesWithPriority = new List<RecipeWithPriority>();
         foreach (var recipe in Recipes)
         {
-            var recipePriority = recipe.CanBeDoneWith(Ingredients);
+            var recipePriority = recipe.CanBeDoneWith(Ingredients.Select(q => q.IngredientSo).ToList());
             if (recipePriority == -1)
             {
                 continue;

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SlicedTomatoasRecipe
   m_EditorClassIdentifier: 
   <StrictIngredients>k__BackingField:
-  - {fileID: 11400000, guid: 9f6971b58da719248825b39e131e235b, type: 2}
+  - {fileID: 11400000, guid: 90169552751f38841b29a6b41a9b94da, type: 2}
   <InterchangeableIngredientsCategory>k__BackingField: 
-  <IngredientProduced>k__BackingField: {fileID: 11400000, guid: 1aa974eddf3736343b2306d0229df2d6, type: 2}
+  <IngredientProduced>k__BackingField: {fileID: 11400000, guid: 702f17f868c2912408a524d06ffb7fe4, type: 2}
