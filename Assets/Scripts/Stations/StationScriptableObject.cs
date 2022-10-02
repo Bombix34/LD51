@@ -17,6 +17,11 @@ public abstract class StationScriptableObject : ScriptableObject
     protected List<Recipe> Recipes { get; set; }
     public Action OnCleanStation { get; internal set; }
 
+    public virtual void OnEnable()
+    {
+        Ingredients = new List<Ingredient>();
+    }
+
     public void AddIngredient(Ingredient ingredient)
     {
         if (!CanAddIngredient())
@@ -114,6 +119,10 @@ public abstract class StationScriptableObject : ScriptableObject
 
     public void Craft(Vector2 spawnPosition)
     {
+        if (!Ingredients.Any())
+        {
+            return;
+        }
         var recipe = GetBestRecipe();
 
         if(recipe == null)
