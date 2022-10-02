@@ -61,12 +61,12 @@ public class CsvImporterEditor : EditorWindow
         }
         Directory.CreateDirectory(PATH_TO_INGREDIENTS);
 
-        var sprites = AssetDatabase.LoadAllAssetsAtPath(Path.Combine(PATH_TO_SPRITES, $"Ingredients.png")).OfType<Sprite>().ToList();
+        var sprites = AssetDatabase.LoadAllAssetsAtPath(Path.Combine(PATH_TO_SPRITES, $"Ingredients.png")).OfType<Sprite>().OrderBy(q => q.name).ToList();
 
         foreach (var ingredient in ingredients)
         {
             var ingredientScriptableObject = CreateInstance<IngredientScriptableObject>();
-
+            
             ingredientScriptableObject.SetName(ingredient.NomIngredient);
             ingredientScriptableObject.SetCategories(ingredient.Categories.Split(';')
                 .Where(category => category != "")
@@ -141,7 +141,7 @@ public class CsvImporterEditor : EditorWindow
 
             try
             {
-                ingredientScriptableObject.SetSprite(sprites[int.Parse(ingredient.PositionDessin)]);
+                ingredientScriptableObject.SetSprite(sprites.Where(q => q.name == $"Ingredients_{ingredient.PositionDessin}").Single());
             }
             catch (System.Exception)
             {
