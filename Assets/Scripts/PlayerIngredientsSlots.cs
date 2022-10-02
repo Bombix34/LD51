@@ -90,6 +90,7 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
         var ingredientComponent = ingredient.GetComponent<Ingredient>();
         ingredientComponent.IngredientSo = ingredientSo;
         ingredient.GetComponent<SpriteRenderer>().sprite = ingredientSo.Sprite;
+        ingredient.GetComponentInChildren<SpriteOutline>().SetupSprite(ingredientSo.Sprite, ingredientSo.Rarity);
         FillSlots(new List<Transform> { ingredient.transform });
         return ingredientComponent;
     }
