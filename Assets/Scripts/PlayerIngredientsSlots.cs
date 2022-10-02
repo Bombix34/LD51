@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -16,6 +17,21 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
     private void Start()
     {
         Timer.Instance.OnStartTurn += NewIngredientsDraw;
+        foreach (var slot in slots)
+        {
+            slot.OnAddIngredient += AddIngredient;
+            slot.OnRemoveIngredient += RemoveIngredient;
+        }
+    }
+
+    private void AddIngredient(Ingredient ingredient)
+    {
+        Ingredients.Add(ingredient);
+    }
+
+    private void RemoveIngredient(Ingredient ingredient)
+    {
+        Ingredients.Remove(ingredient);
     }
 
     public void FillSlots(List<Transform> newIngredients)
@@ -47,10 +63,11 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
     [Button("Draw")]
     public void NewIngredientsDraw()
     {
-        //foreach (var ingredient in Ingredients)
-        //{
-        //    ingredient.DestroyImmediate();
-        //}
+        foreach (var ingredient in Ingredients)
+        {
+            Debug.Log(ingredient);
+            ingredient.DestroyImmediate();
+        }
         Ingredients.Clear();
         foreach (var slot in slots)
         {
@@ -74,7 +91,6 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
         var ingredientComponent = ingredient.GetComponent<Ingredient>();
         ingredientComponent.IngredientSo = ingredientSo;
         ingredient.GetComponent<SpriteRenderer>().sprite = ingredientSo.Sprite;
-        Ingredients.Add(ingredientComponent);
         FillSlots(new List<Transform> { ingredient.transform });
         return ingredientComponent;
     }
