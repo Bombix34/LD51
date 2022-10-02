@@ -39,6 +39,8 @@ public class PlayerCursor : MonoBehaviour
         {
             return;
         }
+        if(slotClicked.GetComponent<IngredientSlot>().IsEmpty)
+            return;
         IngredientDraggedSlot = slotClicked.GetComponent<IngredientSlot>();
         IngredientDraggedSlot.SelectIngredient();
     }

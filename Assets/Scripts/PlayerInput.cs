@@ -77,6 +77,11 @@ public class PlayerInput : MonoBehaviour
         //AJOUTER LES AUTRES STATIONS ICI
     }
 
+    public void PlayerStationUseButton(PlayerStation stationToUse)
+    {
+        stationToUse.StationSo.Craft(stationToUse.transform.position);
+    }
+
     private void UpdateStation(PlayerStation station)
     {
         if(IngredientSlotSelected)
