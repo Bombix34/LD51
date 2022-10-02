@@ -2,20 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
 
 public class TimerUI : MonoBehaviour
 {
-    private Text textUi;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TextMeshProUGUI textUI;
+    [SerializeField] private Image sliderChrono;
+
+    private void Start()
     {
-        textUi = GetComponent<Text>();
+        Timer.Instance.OnStartTurn += OnStartTurn;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        textUi.text = Timer.Instance.time.ToString("F2");
+        textUI.text = (Timer.Instance.time+0.5f).ToString("F0");
+        sliderChrono.fillAmount = ((10f-Timer.Instance.time))/10f;
+    }
+
+    private void OnStartTurn()
+    {
+        sliderChrono.transform.parent.DOPunchScale(Vector3.one * 0.25f, 0.3f).SetEase(Ease.OutCirc);
     }
 }
