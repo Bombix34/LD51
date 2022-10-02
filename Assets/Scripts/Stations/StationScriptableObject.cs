@@ -117,7 +117,7 @@ public abstract class StationScriptableObject : ScriptableObject
         return bestRecipesWithPriority?.recipe;
     }
 
-    public void Craft(Vector2 spawnPosition)
+    public virtual void Cook(Vector2 spawnPosition)
     {
         if (!Ingredients.Any())
         {

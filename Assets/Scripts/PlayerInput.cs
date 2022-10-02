@@ -72,7 +72,7 @@ public class PlayerInput : MonoBehaviour
         {
             if(IsTryingToUseStation)
             {
-                cookStation.StationSo.Craft(cookStation.transform.position);
+                cookStation.StationSo.Cook(cookStation.transform.position);
             }
             else
             {
@@ -83,7 +83,7 @@ public class PlayerInput : MonoBehaviour
         {
             if(IsTryingToUseStation)
             {
-                cutStation.StationSo.Craft(cutStation.transform.position);
+                cutStation.StationSo.Cook(cutStation.transform.position);
             }
             else
             {
@@ -94,7 +94,7 @@ public class PlayerInput : MonoBehaviour
         {
             if(IsTryingToUseStation)
             {
-                mixStation.StationSo.Craft(mixStation.transform.position);
+                mixStation.StationSo.Cook(mixStation.transform.position);
             }
             else
             {
@@ -127,7 +127,7 @@ public class PlayerInput : MonoBehaviour
 
     public void PlayerStationUseButton(PlayerStation stationToUse)
     {
-        stationToUse.StationSo.Craft(stationToUse.transform.position);
+        stationToUse.StationSo.Cook(stationToUse.transform.position);
     }
 
     private void UpdateStation(PlayerStation station)

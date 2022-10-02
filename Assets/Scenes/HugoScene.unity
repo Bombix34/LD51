@@ -231,6 +231,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnlockedIngredients: []
   UnlockedStations: []
+  <Stations>k__BackingField:
+  - {fileID: 3115619388041356401}
+  - {fileID: 5864681573011868202}
+  - {fileID: 3115619386394209567}
+  - {fileID: 8817889200295089466}
 --- !u!4 &155105381
 Transform:
   m_ObjectHideFlags: 0
@@ -447,7 +452,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3115619386931972594, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
   m_PrefabInstance: {fileID: 3115619388041356400}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3115619388041356401}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22a0ed62456a0f24ca894b72dc5f29e0, type: 3}
@@ -1655,7 +1660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &3115619386399677693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1917,7 +1922,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8817889200246048857, guid: 908c9830006dbda40ad53eb26a0ccc1f, type: 3}
   m_PrefabInstance: {fileID: 5864681573011868201}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5864681573011868202}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22a0ed62456a0f24ca894b72dc5f29e0, type: 3}
@@ -2052,6 +2057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CookStation
       objectReference: {fileID: 0}
+    - target: {fileID: 3115619386931972592, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3115619386931972593, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2102,6 +2111,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 5c4060707ae15624d9e94605872fe74e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
+--- !u!1 &3115619388041356401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3115619386931972592, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
+  m_PrefabInstance: {fileID: 3115619388041356400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4608166489984735590
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2290,12 +2304,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuttingBoard
       objectReference: {fileID: 0}
+    - target: {fileID: 8817889200246048859, guid: 908c9830006dbda40ad53eb26a0ccc1f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8817889200509486443, guid: 908c9830006dbda40ad53eb26a0ccc1f, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 237451312}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 908c9830006dbda40ad53eb26a0ccc1f, type: 3}
+--- !u!1 &5864681573011868202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8817889200246048859, guid: 908c9830006dbda40ad53eb26a0ccc1f, type: 3}
+  m_PrefabInstance: {fileID: 5864681573011868201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!222 &6658425942062915038
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2818,7 +2841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8817889200295089467
 Transform:
   m_ObjectHideFlags: 0
