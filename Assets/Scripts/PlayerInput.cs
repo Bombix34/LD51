@@ -56,7 +56,7 @@ public class PlayerInput : MonoBehaviour
         {
             if(IsTryingToUseStation)
             {
-                cookStation.StationSo.Craft();
+                cookStation.StationSo.Craft(cookStation.transform.position);
             }
             else
             {
@@ -67,7 +67,7 @@ public class PlayerInput : MonoBehaviour
         {
             if(IsTryingToUseStation)
             {
-                cutStation.StationSo.Craft();
+                cutStation.StationSo.Craft(cutStation.transform.position);
             }
             else
             {

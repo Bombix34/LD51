@@ -112,7 +112,7 @@ public abstract class StationScriptableObject : ScriptableObject
         return bestRecipesWithPriority?.recipe;
     }
 
-    public void Craft()
+    public void Craft(Vector2 spawnPosition)
     {
         var recipe = GetBestRecipe();
 
@@ -120,11 +120,11 @@ public abstract class StationScriptableObject : ScriptableObject
         {
             //TODO plat douteux
             var ingredient = AssetDatabase.LoadAssetAtPath<IngredientScriptableObject>(INGREDIENTS_PATH + "Farine" + ".asset");
-            PlayerIngredientsSlots.Instance.GenerateIngredient(ingredient);
+            PlayerIngredientsSlots.Instance.GenerateIngredient(ingredient, spawnPosition);
         }
         else
         {
-            PlayerIngredientsSlots.Instance.GenerateIngredient(recipe.IngredientProduced);
+            PlayerIngredientsSlots.Instance.GenerateIngredient(recipe.IngredientProduced, spawnPosition);
         }
 
 

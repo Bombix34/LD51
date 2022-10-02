@@ -16,7 +16,7 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
     private void Start()
     {
         Timer.Instance.OnStartTurn += NewIngredientsDraw;
-        NewIngredientsDraw();
+        //NewIngredientsDraw();
     }
 
     public void FillSlots(List<Transform> newIngredients)
@@ -62,15 +62,16 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
 
         foreach (var ingredient in ingredientsDraw)
         {
-            ingredientsTransform.Add(GenerateIngredient(ingredient).transform);
+            ingredientsTransform.Add(GenerateIngredient(ingredient, new Vector2(0, -15)).transform);
         }
     }
 
-    public Ingredient GenerateIngredient(IngredientScriptableObject ingredientSo)
+    public Ingredient GenerateIngredient(IngredientScriptableObject ingredientSo, Vector2 spawnPosition)
     {
         var prefab = AssetDatabase.LoadAssetAtPath<Ingredient>(@"Assets\Prefabs\Ingredient.prefab");
         var ingredient = Instantiate(prefab, transform);
         ingredient.transform.SetParent(transform);
+        ingredient.transform.position = spawnPosition;
         var ingredientComponent = ingredient.GetComponent<Ingredient>();
         ingredientComponent.IngredientSo = ingredientSo;
         Ingredients.Add(ingredientComponent);
