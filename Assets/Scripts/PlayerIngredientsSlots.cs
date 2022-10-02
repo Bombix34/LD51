@@ -1,16 +1,22 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
 {
     [SerializeField] private List<IngredientSlot> slots;
+    
+    [field: SerializeField]
+    public List<Ingredient> Ingredients { get; private set; } = new List<Ingredient>();
+    private readonly IngredientDraw _ingredientDraw = new IngredientDraw();
 
-    [SerializeField] private List<Transform> testIngredients;
 
     private void Start()
     {
-        FillSlots(testIngredients);
+        Timer.Instance.OnStartTurn += NewIngredientsDraw;
+        NewIngredientsDraw();
     }
 
     public void FillSlots(List<Transform> newIngredients)
@@ -37,5 +43,38 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
         if(index >= slots.Count)
             return null;
         return slots[index];
+    }
+
+    [Button("Draw")]
+    public void NewIngredientsDraw()
+    {
+        //foreach (var ingredient in Ingredients)
+        //{
+        //    ingredient.DestroyImmediate();
+        //}
+        Ingredients.Clear();
+        foreach (var slot in slots)
+        {
+            slot.CleanIngredient();
+        }
+        var ingredientsDraw = _ingredientDraw.DrawIngredients();
+        var ingredientsTransform = new List<Transform>();
+
+        foreach (var ingredient in ingredientsDraw)
+        {
+            ingredientsTransform.Add(GenerateIngredient(ingredient).transform);
+        }
+    }
+
+    public Ingredient GenerateIngredient(IngredientScriptableObject ingredientSo)
+    {
+        var prefab = AssetDatabase.LoadAssetAtPath<Ingredient>(@"Assets\Prefabs\Ingredient.prefab");
+        var ingredient = Instantiate(prefab, transform);
+        ingredient.transform.SetParent(transform);
+        var ingredientComponent = ingredient.GetComponent<Ingredient>();
+        ingredientComponent.IngredientSo = ingredientSo;
+        Ingredients.Add(ingredientComponent);
+        FillSlots(new List<Transform> { ingredient.transform });
+        return ingredientComponent;
     }
 }
