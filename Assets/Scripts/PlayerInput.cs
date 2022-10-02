@@ -18,7 +18,6 @@ public class PlayerInput : MonoBehaviour
         PlayerIngredientSlotInputUpdate();
         PlayerStationInputUpdate();
         IsTryingToUseStation = Input.GetKey(inputData.useStationInput);
-        Debug.Log(IsTryingToUseStation);
     }
 
     private void PlayerIngredientSlotInputUpdate()
