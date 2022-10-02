@@ -6,7 +6,15 @@ public class CookingStation : StationScriptableObject
 {
     [field: SerializeField]
     public float CookingDuration { get; private set; } = 2f;
-    private bool CookingOngoing { get; set; }
+    public bool CookingOngoing { get; private set; }
+    public float CookingTimePassed { get; private set; }
+    
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        CookingOngoing = false;
+    }
+    
     public override bool CanAddIngredient()
     {
         return Ingredients.Count < 3 && !CookingOngoing;
@@ -27,12 +35,14 @@ public class CookingStation : StationScriptableObject
     }
     IEnumerator CookWithDelay(Vector2 spawnPosition)
     {
+        CookingOngoing = true;
         var startTime = Time.time;
-
         while (Time.time < startTime + CookingDuration)
         {
+            CookingTimePassed = Time.time - startTime;
             yield return new WaitForEndOfFrame();
         }
         base.Cook(spawnPosition);
+        CookingOngoing = false;
     }
 }

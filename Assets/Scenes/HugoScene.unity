@@ -431,6 +431,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2583559358600362623, guid: 24c038a6ea2c5c24b918457c9c3cc450, type: 3}
   m_PrefabInstance: {fileID: 1958772319}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &869704583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 869704583, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
+  m_PrefabInstance: {fileID: 3115619388041356400}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1103929529 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5336750470093209322, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
@@ -1164,6 +1175,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24c038a6ea2c5c24b918457c9c3cc450, type: 3}
+--- !u!1 &2021589777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3115619386658047196, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
+  m_PrefabInstance: {fileID: 3115619388041356400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2021589778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021589777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d43212d16be1145896cca93acb6c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <CookingStation>k__BackingField: {fileID: 11400000, guid: 5c4060707ae15624d9e94605872fe74e, type: 2}
+  <Slider>k__BackingField: {fileID: 869704583}
 --- !u!1 &2086276397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,38 +2047,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2491744421602017547, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+    - target: {fileID: 1388823575, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2491744421602017547, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2491744421602017547, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 605061778}
-    - target: {fileID: 2491744421602017547, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2491744421602017547, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayerStationUseButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2491744421602017547, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerInput, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2491744421602017547, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1122037122}
-    - target: {fileID: 2491744421602017547, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: PlayerStation, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 3115619386658047168, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2105,10 +2111,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3115619386931972594, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
-      propertyPath: <StationSo>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 5c4060707ae15624d9e94605872fe74e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
 --- !u!1 &3115619388041356401 stripped

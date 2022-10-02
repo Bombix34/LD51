@@ -61,7 +61,7 @@ public class PlayerCursor : MonoBehaviour
         else
         {
             IngredientSlot currentSlot = slotClicked.GetComponent<IngredientSlot>();
-            if(currentSlot.IngredientOnSlot!=null)
+            if(currentSlot.IngredientOnSlot != null || (!currentSlot.transform.parent.GetComponent<PlayerStation>()?.StationSo.CanAddIngredient() ?? false))
             {
                 IngredientDraggedSlot.PutIngredientOnSlot();
                 IngredientDraggedSlot = null;
