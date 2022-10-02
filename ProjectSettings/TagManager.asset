@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ingredients
+    uniqueID: 2012985571
+    locked: 0

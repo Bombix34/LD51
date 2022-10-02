@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1b61b2a252d9746a87af8866442a8e, type: 3}
+  m_Name: AZERTY_Input
+  m_EditorClassIdentifier: 
+  ingredientSlotInputs: 690000006f000000700000006b0000006c0000006d000000
+  ingredientSlotPadNumInputs: 010100000201000003010000040100000501000006010000
+  cutStationInput: 97
+  cookStationInput: 122
+  mixStationInput: 101
+  frigdeStationInput: 114
+  serviceStationInput: 32
+  useStationInput: 304

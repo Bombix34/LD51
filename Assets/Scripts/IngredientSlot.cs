@@ -34,4 +34,6 @@ public class IngredientSlot : MonoBehaviour
         set { ingredientOnSlot = value; }
         get => ingredientOnSlot;
     }
+
+    public bool IsEmpty{get=> ingredientOnSlot==null;}
 }

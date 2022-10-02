@@ -12,6 +12,8 @@ public class PlayerCursor : MonoBehaviour
         //drag n drop state
         if(IngredientDraggedSlot != null)
         {
+            if(IngredientDraggedSlot.IngredientOnSlot == null)
+                return;
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Transform ingredientOnSlot = IngredientDraggedSlot.IngredientOnSlot;
             ingredientOnSlot.transform.position = Vector3.Lerp(ingredientOnSlot.position, mousePosition, 0.05f);
