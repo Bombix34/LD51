@@ -1,7 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ScoreBoard : Singleton<ScoreBoard>
 {
@@ -10,22 +11,28 @@ public class ScoreBoard : Singleton<ScoreBoard>
     private const string INGREDIENTS_PATH = "Assets/ScriptableObjects/Ingredients/";
     public List<IngredientScriptableObject> UnlockedIngredients = new List<IngredientScriptableObject>();
     public List<StationScriptableObject> UnlockedStations = new List<StationScriptableObject>();
+    [field: SerializeField]
+    public List<GameObject> Stations { get; set; }
     public int IngredientDrawSize { get; private set; }
 
     public List<ScoreLevel> ScoreLevels { get; set; } = new List<ScoreLevel>
     {
-        new ScoreLevel(50, new List<string>() { "Patate" }, new List<string>() { "Fridge" }, 2),
+        new ScoreLevel(50, new List<string>() { "Patate crue" }, new List<string>() { "Fridge" }, 2),
+        new ScoreLevel(90, new List<string>() { "Oeuf cru" }, new List<string>(), 2),
+        new ScoreLevel(100, new List<string>() { "Poulet cru" }, new List<string>() { "MixingStation" }, 4),
+        new ScoreLevel(150, new List<string>() { "Boeuf cru" }, new List<string>() { "CookStation" }, 6),
     };
 
     public ScoreLevel NextScoreLevel { get; private set; }
 
-    private List<IngredientScriptableObject> newlyAddedIngredients = new List<IngredientScriptableObject>();
+    private readonly List<IngredientScriptableObject> newlyAddedIngredients = new List<IngredientScriptableObject>();
 
     void Start()
     {
         UnlockIngredient("Tomate crue");
         UnlockStation("CuttingBoard");
         IngredientDrawSize = 1;
+        NextScoreLevel = ScoreLevels.First();
     }
 
     public void AddScore(int score)
@@ -36,9 +43,10 @@ public class ScoreBoard : Singleton<ScoreBoard>
             return;
         }
 
-        var newScore = Score + score;
-        while (newScore >= NextScoreLevel.Score)
+        Score += score;
+        while (NextScoreLevel != null && Score >= NextScoreLevel.Score)
         {
+            
             foreach (var ingredientName in NextScoreLevel.IngredientsName)
             {
                 UnlockIngredient(ingredientName);
@@ -48,8 +56,16 @@ public class ScoreBoard : Singleton<ScoreBoard>
             {
                 UnlockStation(stationName);
             }
-            
-            NextScoreLevel = ScoreLevels[ScoreLevels.IndexOf(NextScoreLevel) + 1];
+            IngredientDrawSize = NextScoreLevel.IngredientDrawSize;
+
+            var nextScoreLevelIndex = ScoreLevels.IndexOf(NextScoreLevel) + 1;
+            if (ScoreLevels.Count <= nextScoreLevelIndex)
+            {
+                NextScoreLevel = null;
+                return;
+            }
+
+            NextScoreLevel = ScoreLevels[nextScoreLevelIndex];
         }
     }
 
@@ -63,7 +79,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     private void UnlockStation(string stationName)
     {
-
+        Stations.Where(s => s.name == stationName).Single().SetActive(true);
     }
 
     public List<IngredientScriptableObject> GetNewlyAdded()
