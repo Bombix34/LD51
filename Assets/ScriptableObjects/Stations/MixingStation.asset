@@ -15,19 +15,19 @@ MonoBehaviour:
   <Name>k__BackingField: MixingStation
   <Ingredients>k__BackingField: []
   <Recipes>k__BackingField:
-  - {fileID: 11400000, guid: df1c34f1347c50a448283d39ba5b5911, type: 2}
-  - {fileID: 11400000, guid: c3c757ce417fa494aa858f71ea5d6154, type: 2}
-  - {fileID: 11400000, guid: cbc323035f9f24845a2aadb87434ebc3, type: 2}
-  - {fileID: 11400000, guid: b3d78f2ed8481a745b898efe2cb5d138, type: 2}
-  - {fileID: 11400000, guid: 8adafc4070071eb43b7e435aef7f5280, type: 2}
-  - {fileID: 11400000, guid: 7583377e8597768469ab882a5b87df09, type: 2}
-  - {fileID: 11400000, guid: 633fd7fda6371a84283d3460eb1221c4, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: a13b6503e574840488fb2b21e51cfd8a, type: 2}
-  - {fileID: 11400000, guid: 438a6391611da2c42bcbd519d2148ccd, type: 2}
-  - {fileID: 11400000, guid: 3f1db03a319aab543aeb30c85660ea84, type: 2}
-  - {fileID: 11400000, guid: e70313d3218f8b54f92bf4e8ae2611c5, type: 2}
-  - {fileID: 11400000, guid: ecd190aea280e80498fa1ddf0c6d3c4b, type: 2}
-  - {fileID: 11400000, guid: 85d21589f872271499b4fb2e393cdad7, type: 2}
-  - {fileID: 11400000, guid: 75bfc5916b4fbca489bca4ee2027d3c1, type: 2}
+  - {fileID: 11400000, guid: 1f868c8166f0f5248ab787b2f66ff3ce, type: 2}
+  - {fileID: 11400000, guid: 52c7a46cec4ab8f42b2aabef7576c3b0, type: 2}
+  - {fileID: 11400000, guid: 3edbca1d917ad3d46b1de4907ded01a1, type: 2}
+  - {fileID: 11400000, guid: 8c5ddfa83f285fe499063eb5df845fb4, type: 2}
+  - {fileID: 11400000, guid: b041f23142e25f34084a6a907b3f22e1, type: 2}
+  - {fileID: 11400000, guid: 92a9c804f8fc1c742ae89a9c02768c65, type: 2}
+  - {fileID: 11400000, guid: 8d55f730af6b97f418a05e8e8476ff80, type: 2}
+  - {fileID: 11400000, guid: 3fa8b3e6d74b84842b54985e687cf20f, type: 2}
+  - {fileID: 11400000, guid: 4c847497288a092498f2d0992e123cc1, type: 2}
+  - {fileID: 11400000, guid: cf6c45a3329f4b94e86e8a62060a8b4b, type: 2}
+  - {fileID: 11400000, guid: 11aad3298b58cf94cb71d23bf62e29a3, type: 2}
+  - {fileID: 11400000, guid: 76d065871f348a44c821b74d4e6569cf, type: 2}
+  - {fileID: 11400000, guid: cfe3549f576986841a131dcd960c6637, type: 2}
+  - {fileID: 11400000, guid: a09d658bac6004547bb602e541721049, type: 2}
+  - {fileID: 11400000, guid: 7d5fde7b81f73b848adba42814a69875, type: 2}
+  - {fileID: 11400000, guid: 1865b618f1f2fcd40a5c8b4b788f86d1, type: 2}

@@ -1,6 +1,7 @@
 using CsvHelper;
 using CsvHelper.Configuration;
 using DG.Tweening.Plugins.Core.PathCore;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -264,7 +265,7 @@ public class CsvImporterEditor : EditorWindow
                 }
             }
 
-            AssetDatabase.CreateAsset(recipeScriptableObject, Path.Combine(PATH_TO_RECIPES, $"{recipeScriptableObject.IngredientProduced.Name}.asset"));
+            AssetDatabase.CreateAsset(recipeScriptableObject, Path.Combine(PATH_TO_RECIPES, $"{recipeScriptableObject.IngredientProduced.Name}_{Guid.NewGuid()}.asset"));
             switch (recipe.Station)
             {
                 case ("Decoupage"):
