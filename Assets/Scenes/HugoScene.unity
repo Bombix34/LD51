@@ -1653,7 +1653,7 @@ MonoBehaviour:
   - {fileID: 436927010}
   - {fileID: 1103929529}
   useStationButton: {fileID: 2491744422137964004}
-  nbMinimumToUseStation: 2
+  nbMinimumToUseStation: 1
   <StationSo>k__BackingField: {fileID: 11400000, guid: 2539df3e88c5d34448eae48c50d92c15, type: 2}
 --- !u!4 &3115619386394209566
 Transform:
