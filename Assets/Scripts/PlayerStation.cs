@@ -29,6 +29,11 @@ public class PlayerStation : MonoBehaviour
             StationSo.OnCleanStation += ResetButton;
         }
     }
+    
+    private void Update()
+    {
+        DisplayButton(null);
+    }
 
     public void AddIngredientToStation(Transform ingredient)
     {
@@ -77,19 +82,22 @@ public class PlayerStation : MonoBehaviour
 
     private void DisplayButton(Ingredient ingredient)
     {
-       // Debug.Log(StationIngredients.Count);
-        if(StationIngredients.Count >= nbMinimumToUseStation)
+        if(useStationButton==null)
+            return;
+        if(StationIngredients.Count < nbMinimumToUseStation)
         {
-            useStationButton?.transform.DOScale(0f,0.3f);
+            if(useStationButton.transform.localScale.x > 0f)
+                useStationButton?.transform.DOScale(0f,0.3f);
         }
         else
         {
-            useStationButton?.transform.DOScale(0.1f,0.3f);
+            if(useStationButton.transform.localScale.x < 0.1f)
+                useStationButton?.transform.DOScale(0.1f,0.3f);
         }
     }
 
     private void ResetButton()
     {
-            useStationButton?.transform.DOScale(0f ,0.3f);
+        useStationButton?.transform.DOScale(0f ,0.3f);
     }
 }

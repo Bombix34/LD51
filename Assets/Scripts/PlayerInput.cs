@@ -11,6 +11,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private PlayerIngredientsSlots playerIngredientsSlots;
     [SerializeField] private PlayerStation cookStation;
     [SerializeField] private PlayerStation cutStation;
+    [SerializeField] private PlayerStation mixStation;
+    [SerializeField] private PlayerStation deliveryStation;
+    [SerializeField] private PlayerStation fridgeStation;
 
     public bool IsTryingToUseStation = false;
 
@@ -75,13 +78,44 @@ public class PlayerInput : MonoBehaviour
                 UpdateStation(cutStation);
             }
         }
-        //AJOUTER LES AUTRES STATIONS ICI
+        if(Input.GetKeyDown(inputData.mixStationInput))
+        {
+            if(IsTryingToUseStation)
+            {
+                mixStation.StationSo.Craft(mixStation.transform.position);
+            }
+            else
+            {
+                UpdateStation(mixStation);
+            }
+        }
+        if(Input.GetKeyDown(inputData.deliveryStationInput))
+        {
+            if(IsTryingToUseStation)
+            {
+                //deliveryStation.StationSo.Craft(deliveryStation.transform.position);
+            }
+            else
+            {
+                UpdateStation(deliveryStation);
+            }
+        }
+        if(Input.GetKeyDown(inputData.frigdeStationInput))
+        {
+            if(IsTryingToUseStation)
+            {
+              //  fridgeStation.StationSo.Craft(fridgeStation.transform.position);
+            }
+            else
+            {
+                UpdateStation(fridgeStation);
+            }
+        }
     }
 
     public void PlayerStationUseButton(PlayerStation stationToUse)
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-            stationToUse.StationSo.Craft(stationToUse.transform.position);
+        stationToUse.StationSo.Craft(stationToUse.transform.position);
     }
 
     private void UpdateStation(PlayerStation station)

@@ -12,7 +12,7 @@ public class SlotInputData : ScriptableObject
     public KeyCode cookStationInput;
     public KeyCode mixStationInput;
     public KeyCode frigdeStationInput;
-    public KeyCode serviceStationInput;
+    public KeyCode deliveryStationInput;
 
     public KeyCode useStationInput;
 }

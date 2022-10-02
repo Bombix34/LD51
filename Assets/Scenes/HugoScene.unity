@@ -968,9 +968,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3115619387265876592}
     - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+      propertyPath: mixStation
+      value: 
+      objectReference: {fileID: 223970001}
+    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
       propertyPath: cookStation
       value: 
       objectReference: {fileID: 1122037122}
+    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+      propertyPath: fridgeStation
+      value: 
+      objectReference: {fileID: 8817889200295089464}
+    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+      propertyPath: deliveryStation
+      value: 
+      objectReference: {fileID: 8817889200075692952}
     - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
       propertyPath: playerIngredientsSlots
       value: 
@@ -1570,7 +1582,7 @@ Transform:
   - {fileID: 8817889199806453431}
   - {fileID: 8817889201467864066}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8817889200125469728
 MonoBehaviour:
@@ -1755,7 +1767,7 @@ Transform:
   - {fileID: 8817889200560134167}
   - {fileID: 8817889200644487842}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!223 &8817889200560134154
 Canvas:
