@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6113bf1c2bbc24090a8cedc431b13c, type: 3}
   m_Name: Fridge
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
+  <Name>k__BackingField: Fridge
   <Ingredients>k__BackingField: []
   <Recipes>k__BackingField: []

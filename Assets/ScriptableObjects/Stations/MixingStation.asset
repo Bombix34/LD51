@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1ffdda01af663489f1308277476907, type: 3}
   m_Name: MixingStation
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
+  <Name>k__BackingField: MixingStation
   <Ingredients>k__BackingField: []
   <Recipes>k__BackingField: []

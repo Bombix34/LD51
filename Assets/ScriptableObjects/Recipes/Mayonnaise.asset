@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b314b99231c0e84fa8b50f422f7322a, type: 3}
-  m_Name: SlicedTomatoasRecipe
+  m_Name: Mayonnaise
   m_EditorClassIdentifier: 
   <StrictIngredients>k__BackingField:
-  - {fileID: 11400000, guid: 66c62024d71d4244aa1bf7ae797bc342, type: 2}
+  - {fileID: 11400000, guid: 4cfc0fb9a9704f74394a98d8a0962828, type: 2}
   <InterchangeableIngredientsCategory>k__BackingField: 
-  <IngredientProduced>k__BackingField: {fileID: 11400000, guid: fc26ddaac9753cd4aa947bcd047a707e, type: 2}
+  <IngredientProduced>k__BackingField: {fileID: 11400000, guid: 5f00356fa659f914da98184e1f7ad8e4, type: 2}

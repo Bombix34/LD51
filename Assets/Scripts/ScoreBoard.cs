@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using System;
 
 public class ScoreBoard : Singleton<ScoreBoard>
 {
@@ -17,18 +16,15 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     public List<ScoreLevel> ScoreLevels { get; set; } = new List<ScoreLevel>
     {
-        new ScoreLevel(100, new List<string>() { "Patate crue" }, new List<string>() { "CookStation" }, 2),
-        new ScoreLevel(150, new List<string>() { "Oeuf cru" }, new List<string>(), 2),
-        new ScoreLevel(300, new List<string>() { "Poulet cru" }, new List<string>() { "MixingStation" }, 4),
-        new ScoreLevel(500, new List<string>() { "Boeuf cru" }, new List<string>() { "CookStation" }, 6),
+        new ScoreLevel(50, new List<string>() { "Patate crue" }, new List<string>() { "Fridge" }, 2),
+        new ScoreLevel(90, new List<string>() { "Oeuf cru" }, new List<string>(), 2),
+        new ScoreLevel(100, new List<string>() { "Poulet cru" }, new List<string>() { "MixingStation" }, 4),
+        new ScoreLevel(150, new List<string>() { "Boeuf cru" }, new List<string>() { "CookStation" }, 5),
     };
 
     public ScoreLevel NextScoreLevel { get; private set; }
 
     private readonly List<IngredientScriptableObject> newlyAddedIngredients = new List<IngredientScriptableObject>();
-
-    public Action<int> OnAddScore;
-    public Action<ScoreLevel> OnReachingScoreStep;
 
     void Start()
     {
@@ -47,7 +43,6 @@ public class ScoreBoard : Singleton<ScoreBoard>
         }
 
         Score += score;
-        OnAddScore?.Invoke(score);
         while (NextScoreLevel != null && Score >= NextScoreLevel.Score)
         {
             
@@ -70,7 +65,6 @@ public class ScoreBoard : Singleton<ScoreBoard>
             }
 
             NextScoreLevel = ScoreLevels[nextScoreLevelIndex];
-            OnReachingScoreStep?.Invoke(NextScoreLevel);
         }
     }
 

@@ -144,4 +144,14 @@ public abstract class StationScriptableObject : ScriptableObject
     {
         CleanIngredients();
     }
+#if (UNITY_EDITOR)
+    public void CleanRecipes()
+    {
+        Recipes.Clear();
+    }
+    public void AddRecipe(Recipe recipe)
+    {
+        Recipes.Add(recipe);
+    }
+#endif
 }
