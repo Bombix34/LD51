@@ -12,7 +12,8 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
     [field: SerializeField]
     public List<Ingredient> Ingredients { get; private set; } = new List<Ingredient>();
     private readonly IngredientDraw _ingredientDraw = new IngredientDraw();
-
+    [field: SerializeField]
+    public GameObject DefaultIngredient { get; private set; }
 
     private void Start()
     {
@@ -83,8 +84,7 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
 
     public Ingredient GenerateIngredient(IngredientScriptableObject ingredientSo, Vector2 spawnPosition)
     {
-        var prefab = AssetDatabase.LoadAssetAtPath<Ingredient>(@"Assets\Prefabs\Ingredient.prefab");
-        var ingredient = Instantiate(prefab, transform);
+        var ingredient = Instantiate(DefaultIngredient, transform);
         ingredient.transform.SetParent(transform);
         ingredient.transform.position = spawnPosition;
         var ingredientComponent = ingredient.GetComponent<Ingredient>();

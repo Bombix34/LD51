@@ -1,13 +1,14 @@
 using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
 public abstract class StationScriptableObject : ScriptableObject
 {
-    private const string INGREDIENTS_PATH = "Assets/ScriptableObjects/Ingredients/";
+    private const string INGREDIENTS_PATH = "ScriptableObjects/Ingredients/";
     
     [field: SerializeField]
     public string Name { get; set; }
@@ -128,7 +129,7 @@ public abstract class StationScriptableObject : ScriptableObject
         if(recipe == null)
         {
             //TODO plat douteux
-            var ingredient = AssetDatabase.LoadAssetAtPath<IngredientScriptableObject>(INGREDIENTS_PATH + "Farine" + ".asset");
+            var ingredient = Resources.Load<IngredientScriptableObject>(Path.Combine(INGREDIENTS_PATH, "Farine"));
             PlayerIngredientsSlots.Instance.GenerateIngredient(ingredient, spawnPosition);
         }
         else
