@@ -832,17 +832,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484038459}
   m_CullTransparentMesh: 1
---- !u!114 &605061778 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
-  m_PrefabInstance: {fileID: 846647473291178755}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1511476dfb769a439e303802a6429a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &747725177 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5336750470093209322, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
@@ -2857,31 +2846,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerManager
       objectReference: {fileID: 0}
-    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+    - target: {fileID: 0}
       propertyPath: inputData
       value: 
       objectReference: {fileID: 11400000, guid: 37b78bcddda467d4282bb6ded7895b23, type: 2}
-    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+    - target: {fileID: 0}
       propertyPath: cutStation
       value: 
       objectReference: {fileID: 3115619387265876592}
-    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+    - target: {fileID: 0}
       propertyPath: mixStation
       value: 
       objectReference: {fileID: 3115619386394209565}
-    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+    - target: {fileID: 0}
       propertyPath: cookStation
       value: 
       objectReference: {fileID: 1122037122}
-    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+    - target: {fileID: 0}
       propertyPath: fridgeStation
       value: 
       objectReference: {fileID: 8817889200295089464}
-    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+    - target: {fileID: 0}
       propertyPath: deliveryStation
       value: 
       objectReference: {fileID: 8817889200075692952}
-    - target: {fileID: 846647473431326583, guid: 63ceb1911d82f6843b418aca349b987e, type: 3}
+    - target: {fileID: 0}
       propertyPath: playerIngredientsSlots
       value: 
       objectReference: {fileID: 6591070}
@@ -2931,7 +2920,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 605061778}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
         m_MethodName: PlayerStationUseButton
         m_Mode: 2
@@ -3480,7 +3469,7 @@ PrefabInstance:
     - target: {fileID: 2491744421602017547, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 605061778}
+      objectReference: {fileID: 0}
     - target: {fileID: 3115619386658047168, guid: e44f43dbc602563479687d4dd0522fdd, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3611,7 +3600,7 @@ PrefabInstance:
     - target: {fileID: 899703426298626486, guid: 908c9830006dbda40ad53eb26a0ccc1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 605061778}
+      objectReference: {fileID: 0}
     - target: {fileID: 899703426298626486, guid: 908c9830006dbda40ad53eb26a0ccc1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3643,7 +3632,7 @@ PrefabInstance:
     - target: {fileID: 2301426688323904716, guid: 908c9830006dbda40ad53eb26a0ccc1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 605061778}
+      objectReference: {fileID: 0}
     - target: {fileID: 2301426688323904716, guid: 908c9830006dbda40ad53eb26a0ccc1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

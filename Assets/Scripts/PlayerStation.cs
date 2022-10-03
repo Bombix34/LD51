@@ -17,7 +17,7 @@ public class PlayerStation : MonoBehaviour
 
     private void Start()
     {
-        useStationButton?.transform.DOScale(0f,0f);
+        SetupButtonUSeStation();
         stationSlots = GetComponentsInChildren<IngredientSlot>().ToList();
         Timer.Instance.OnStartTurn += StationSo.HandleNewTurn;
         foreach (var slot in stationSlots)
@@ -31,6 +31,14 @@ public class PlayerStation : MonoBehaviour
             StationSo.OnCleanStation += slot.CleanIngredient;
             StationSo.OnCleanStation += ResetButton;
         }
+    }
+
+    private void SetupButtonUSeStation()
+    {
+        if(useStationButton == null)
+            return;
+        useStationButton?.transform.DOScale(0f,0f);
+        useStationButton.onClick.AddListener(PlayerStationUseButton);
     }
     
     private void Update()
@@ -96,5 +104,11 @@ public class PlayerStation : MonoBehaviour
     private void ResetButton()
     {
         useStationButton?.transform.DOScale(0f ,0.3f);
+    }
+
+    
+    public void PlayerStationUseButton()
+    {
+        StationSo.Cook(transform.position);
     }
 }

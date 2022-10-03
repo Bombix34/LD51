@@ -66,10 +66,26 @@ public class PlayerCursor : MonoBehaviour
         else
         {
             IngredientSlot currentSlot = slotClicked.GetComponent<IngredientSlot>();
-            if(currentSlot.IngredientOnSlot != null || (!currentSlot.transform.parent.GetComponent<PlayerStation>()?.StationSo.CanAddIngredient() ?? false))
+            PlayerStation currentSlotStation = currentSlot.transform.parent.GetComponent<PlayerStation>();
+
+            if(currentSlotStation != null && (currentSlotStation.StationSo.Name == "CookingStation" ) && (!currentSlotStation?.StationSo.CanAddIngredient() ?? false))
             {
                 IngredientDraggedSlot.PutIngredientOnSlot();
                 IngredientDraggedSlot = null;
+                return;
+            }
+
+            if(currentSlot.IngredientOnSlot != null)
+            {
+                var ingredientOnTarget = currentSlot.IngredientOnSlot;
+                var currentIngredientDragged = IngredientDraggedSlot.IngredientOnSlot;
+                currentSlot.IngredientOnSlot = null;
+                IngredientDraggedSlot.IngredientOnSlot = null;
+                currentSlot.IngredientOnSlot = currentIngredientDragged;
+                IngredientDraggedSlot.IngredientOnSlot = ingredientOnTarget;
+                IngredientDraggedSlot.PutIngredientOnSlot();
+                currentSlot.PutIngredientOnSlot();
+                IngredientDraggedSlot=null;
                 return;
             }
             Transform ingredientOnSlot = IngredientDraggedSlot.IngredientOnSlot;
