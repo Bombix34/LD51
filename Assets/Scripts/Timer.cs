@@ -31,6 +31,7 @@ public class Timer : Singleton<Timer>
         ++Level;
         if(playSound)
             SoundManager.Instance.PlaySound(AudioFieldEnum.SFX08_END_LOOP);
+        SoundManager.Instance.Launch();
         OnStartTurn?.Invoke();
     }
 }

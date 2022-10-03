@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 using Tools.Utils;
@@ -13,8 +14,24 @@ namespace Tools.Managers
 
 		[SerializeField]
 		private AudioDatabase m_SoundDataBase;
+		[SerializeField] private List<AudioClip> musicLoops;
 
 		public AudioDatabase SoundDatabase { get => m_SoundDataBase; }
+
+		private int lastLoopIndex=-1;
+
+		public AudioClip RandomMusicLoop
+		{
+			get 
+			{
+				int rand = Random.Range(0, musicLoops.Count);
+				while(rand == lastLoopIndex)
+				{
+					rand = Random.Range(0, musicLoops.Count);
+				}
+				return musicLoops[rand];
+			}
+		}
 
 	}
 }

@@ -8,7 +8,7 @@ namespace Tools.Managers
 {
 	public class SoundManager : Singleton<SoundManager>
 	{
-
+        private bool isLaunch=false;
         private AudioSource audioSourceDefault;
         private AudioSource audioSourceMusic;
         private AudioSource audioSourceUI;
@@ -18,7 +18,6 @@ namespace Tools.Managers
 
         private void Awake()
 		{
-
 			//settings = (SoundManagerSettings)Resources.Load("ManagersSettings/SoundManagerSettings", typeof(SoundManagerSettings));
 
             GameObject audioSourceDefault_GO = new GameObject("SM_AudioSource_Default");
@@ -46,11 +45,44 @@ namespace Tools.Managers
             audioSourceEffects.spatialBlend = 0;
         }
 
+        private void Update()
+        {
+            if(!audioSourceMusic.isPlaying && isLaunch)
+                PlayMusic();
+        }
+
+        private void OnEnable()
+        {
+            ScoreBoard.Instance.OnGameOver += OnGameOver;
+        }
+
+        private void Ondisable()
+        {
+            ScoreBoard.Instance.OnGameOver -= OnGameOver;
+        }
+
+        public void Launch()
+        {
+            isLaunch=true;
+        }
+
+        private void OnGameOver(int score)
+        {
+            FadeOutVolume(AudioSourceType.Music, 0.5f);
+        }
+
 
         public void PlaySound(AudioFieldEnum sound)
         {
             AudioSourceType sourceType = settings.SoundDatabase.GetAudioEvent(sound).audioSourceType;
             settings.SoundDatabase.PlaySound(sound, GetAudioSource(sourceType));
+        }
+
+        public void PlayMusic()
+        {
+            audioSourceMusic.Stop();
+            audioSourceMusic.clip = settings.RandomMusicLoop;
+            audioSourceMusic.Play();
         }
 
         public AudioSource GetAudioSource(AudioSourceType audioSourceType)

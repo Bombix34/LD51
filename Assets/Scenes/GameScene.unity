@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8570e3af1fd1e5b449dc24876192ae47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
+  life: 2
   UnlockedIngredients: []
   UnlockedStations: []
   <Stations>k__BackingField:
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 83.85
+  m_fontSize: 190.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1684,7 +1684,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 162.15
+  m_fontSize: 244.53
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2658,7 +2658,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.05
+  m_fontSize: 131.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

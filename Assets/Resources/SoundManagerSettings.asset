@@ -13,3 +13,10 @@ MonoBehaviour:
   m_Name: SoundManagerSettings
   m_EditorClassIdentifier: 
   m_SoundDataBase: {fileID: 11400000, guid: 1bfd361358d044d4382a7b4a70e40d84, type: 2}
+  musicLoops:
+  - {fileID: 8300000, guid: 53595d756cbf0f3478112b24dd8c9260, type: 3}
+  - {fileID: 8300000, guid: cdcf71fe1b6bc9d4d8c182e9a9e9ab9c, type: 3}
+  - {fileID: 8300000, guid: 9aed4bf656fc8c448b667049abe8da3d, type: 3}
+  - {fileID: 8300000, guid: aadde057ff96fbc4895274911776c619, type: 3}
+  - {fileID: 8300000, guid: 6c487c2fd2da93041be68152a2f0d098, type: 3}
+  - {fileID: 8300000, guid: 66dcfce87d448d44d8c03a348c957252, type: 3}
