@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 public class PlayerStation : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PlayerStation : MonoBehaviour
             slot.OnAddIngredient += DisplayButton;
             slot.OnRemoveIngredient += StationSo.RemoveIngredient;
             slot.OnRemoveIngredient += DisplayButton;
+
+            StationSo.OnCleanStation = null;
             StationSo.OnCleanStation += slot.CleanIngredient;
             StationSo.OnCleanStation += ResetButton;
         }
