@@ -47,7 +47,6 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     public void AddScore(int score)
     {
-        Debug.Log(Timer.Instance.Level);
         if(score <= 0 )
         {
             if(Timer.Instance.Level <= 1)

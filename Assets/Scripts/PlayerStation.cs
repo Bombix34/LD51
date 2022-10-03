@@ -59,7 +59,7 @@ public class PlayerStation : MonoBehaviour
         }
     }
 
-    public bool HasEmptySlot => stationSlots.Any(x => x.IngredientOnSlot == null);
+    public bool HasEmptySlot => stationSlots.Any(x => x.gameObject.activeInHierarchy && x.IngredientOnSlot == null);
 
     public List<Transform> StationIngredients
     {
