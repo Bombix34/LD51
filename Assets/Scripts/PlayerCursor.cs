@@ -21,7 +21,7 @@ public class PlayerCursor : MonoBehaviour
                 return;
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Transform ingredientOnSlot = IngredientDraggedSlot.IngredientOnSlot;
-            ingredientOnSlot.transform.position = Vector3.Lerp(ingredientOnSlot.position, mousePosition, 0.05f);
+            ingredientOnSlot.transform.position = Vector3.Lerp(ingredientOnSlot.position, mousePosition, 0.2f);
             if(Input.GetMouseButtonUp(0))
             {
                 DropIngredient();
