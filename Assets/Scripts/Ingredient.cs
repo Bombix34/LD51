@@ -7,6 +7,10 @@ public class Ingredient : MonoBehaviour
 
     public void DestroyImmediate()
     {
+        if(gameObject == null)
+        {
+            return;
+        }
         DestroyImmediate(gameObject);
     }
 }

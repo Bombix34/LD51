@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b314b99231c0e84fa8b50f422f7322a, type: 3}
+  m_Name: Steak hache_d52ede66-4ada-4085-9b7c-c5e7d5dc287f
+  m_EditorClassIdentifier: 
+  <StrictIngredients>k__BackingField:
+  - {fileID: 11400000, guid: 478e011d332d7794189d2f0dd9091c03, type: 2}
+  - {fileID: 11400000, guid: 2ecd27ae57a07fe4ab19aad6d340f946, type: 2}
+  - {fileID: 11400000, guid: 2ecd27ae57a07fe4ab19aad6d340f946, type: 2}
+  <InterchangeableIngredientsCategory>k__BackingField: 
+  <IngredientProduced>k__BackingField: {fileID: 11400000, guid: 2ecd27ae57a07fe4ab19aad6d340f946, type: 2}

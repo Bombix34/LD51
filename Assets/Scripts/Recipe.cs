@@ -41,6 +41,11 @@ public class Recipe : ScriptableObject
 
         if (!InterchangeableIngredientsCategory.Any())
         {
+
+            if (ingredientsCopy.Any())
+            {
+                return -1;
+            }
             return 0;
         }
 
@@ -53,6 +58,11 @@ public class Recipe : ScriptableObject
             }
 
             ingredientsCopy.Remove(ingredient);
+        }
+
+        if (ingredientsCopy.Any())
+        {
+            return -1;
         }
 
         return InterchangeableIngredientsCategory.Count;

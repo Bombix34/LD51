@@ -8,9 +8,6 @@ using Tools.Managers;
 
 public abstract class StationScriptableObject : ScriptableObject
 {
-    private const string INGREDIENTS_PATH = "ScriptableObjects/Ingredients/";
-    private const string QUESTIONABLE_DISH_NAME = "Farine";
-
     [field: SerializeField]
     public string Name { get; set; }
     [field: SerializeField]
@@ -129,7 +126,7 @@ public abstract class StationScriptableObject : ScriptableObject
         }
         var recipe = GetBestRecipe();
 
-        var ingredient = recipe?.IngredientProduced ?? Resources.Load<IngredientScriptableObject>(Path.Combine(INGREDIENTS_PATH, QUESTIONABLE_DISH_NAME));
+        var ingredient = recipe?.IngredientProduced ?? Resources.Load<IngredientScriptableObject>("ScriptableObjects/QuestionnableDish");
         PlayerIngredientsSlots.Instance.GenerateIngredient(ingredient, spawnPosition);
         ScoreBoard.Instance.AddToUnlockedDishes(ingredient);
 
