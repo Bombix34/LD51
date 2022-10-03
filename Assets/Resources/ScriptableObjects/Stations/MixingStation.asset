@@ -15,20 +15,22 @@ MonoBehaviour:
   <Name>k__BackingField: MixingStation
   <Ingredients>k__BackingField: []
   <Recipes>k__BackingField:
-  - {fileID: 11400000, guid: 2357b049e744cd74d8593a0b96055856, type: 2}
-  - {fileID: 11400000, guid: 7d09b1531addbc64f9061a19d3a30c81, type: 2}
-  - {fileID: 11400000, guid: 9741786b9b719f64387cd2984c97e3e9, type: 2}
-  - {fileID: 11400000, guid: b6dd7edf6641b044284a1159d624f209, type: 2}
-  - {fileID: 11400000, guid: ddda76570645ad24cb4be6bf45f18a5c, type: 2}
-  - {fileID: 11400000, guid: 383728339c5aa7040b777e872f36277b, type: 2}
-  - {fileID: 11400000, guid: be3ba578402050049b3575e460f9937d, type: 2}
-  - {fileID: 11400000, guid: cc0e9696b5365204fb938cff144c9ffa, type: 2}
-  - {fileID: 11400000, guid: ad747608c5b48754d870c64bde682230, type: 2}
-  - {fileID: 11400000, guid: c743c448cb2776f4fb306302c923d61f, type: 2}
-  - {fileID: 11400000, guid: 3a4bb8fae238c4b41a88de01f5e72984, type: 2}
-  - {fileID: 11400000, guid: 90bf7da06a04bde45922ffeef4b22490, type: 2}
-  - {fileID: 11400000, guid: 6f315f6c9d4a0ad46aad6a50bac9870b, type: 2}
-  - {fileID: 11400000, guid: e8a392991638da54e9ee14a0fc8e96d3, type: 2}
-  - {fileID: 11400000, guid: 7d536bbcf668b634fa60e9d7327e88c9, type: 2}
-  - {fileID: 11400000, guid: d89353a00699236428520bdc6e7aedc4, type: 2}
-  audioOnCook: 3
+  - {fileID: 11400000, guid: 9d3e89a1c46aa7144aa846d70b714f52, type: 2}
+  - {fileID: 11400000, guid: 46816ed6aec43c14b9f1aebf214f1b0c, type: 2}
+  - {fileID: 11400000, guid: 3cadfcba67fa7d7439c5d751906c1995, type: 2}
+  - {fileID: 11400000, guid: 5ae4da169622578488afd4155410416f, type: 2}
+  - {fileID: 11400000, guid: 5779e8807f73ea24eab2d3d2353d085d, type: 2}
+  - {fileID: 11400000, guid: cba4276f87a9bcd4ea24c5058feb8623, type: 2}
+  - {fileID: 11400000, guid: 8127d1bb1270ff14084eb24e757b810b, type: 2}
+  - {fileID: 11400000, guid: abcd073e889899040ba161332213464c, type: 2}
+  - {fileID: 11400000, guid: 8a5e1993f9eada9418b196b735d8270b, type: 2}
+  - {fileID: 11400000, guid: 8fbcca47102e6614f8b5a675286d6b1e, type: 2}
+  - {fileID: 11400000, guid: 0524dd8d08a7a40439323f49fe6ac806, type: 2}
+  - {fileID: 11400000, guid: 3b3a9b93121537341b9ad4038a5a8177, type: 2}
+  - {fileID: 11400000, guid: 4ab6a99e4f4bca247a2a514baeb7f596, type: 2}
+  - {fileID: 11400000, guid: e11d0b69e2efc9845bc4e15d549c66b5, type: 2}
+  - {fileID: 11400000, guid: ce005994c814a4949b1a80b57e902963, type: 2}
+  - {fileID: 11400000, guid: 20a459620d906584892da5f15293e1ca, type: 2}
+  - {fileID: 11400000, guid: a3293b3500d4e514fa96e431becc46f0, type: 2}
+  - {fileID: 11400000, guid: 4e2898c6fa2585a44828c784972b66d4, type: 2}
+  - {fileID: 11400000, guid: a99104fe350285d43b0dfbb475e7a101, type: 2}

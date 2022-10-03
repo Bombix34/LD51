@@ -204,11 +204,29 @@ public class CsvImporterEditor : EditorWindow
             StationScriptableObjects.Add(station);
         }
 
-        foreach (var recipe in recipes)
+        for (int i = 0; i < recipes.Count; i++)
         {
+            RecetteCsvModel recipe = recipes[i];
+            var ingredientsMandatories = recipe.IngredientMandatories;
+            if(recipe.IngredientProduit == "Riz saute")
+            {
+
+            }
+            while (ingredientsMandatories.Any(q => !q.Mendatory))
+            {
+                var ingredient = ingredientsMandatories.First(q => !q.Mendatory);
+                var newRecipe = new RecetteCsvModel
+                {
+                    Station = recipe.Station,
+                    IngredientProduit = recipe.IngredientProduit,
+                    IngredientsString = string.Join(";", ingredientsMandatories.Where(q => q != ingredient).Select(q => $"{q.Name};{(q.Mendatory ? "FALSE" : "TRUE")}")),
+                };
+                recipes.Add(newRecipe);
+                ingredient.Mendatory = true;
+            }
+            
             var recipeScriptableObject = CreateInstance<Recipe>();
             recipeScriptableObject.IngredientProduced = incredientScriptableObjects.Single(q => q.Name == recipe.IngredientProduit.Trim());
-            var ingredientsMandatories = recipe.IngredientMandatories;
             foreach (var ingredientInfo in ingredientsMandatories)
             {
                 var ingredient = incredientScriptableObjects.SingleOrDefault(q => q.Name == ingredientInfo.Name.Trim());

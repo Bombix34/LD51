@@ -25,4 +25,8 @@ public class MainMenuUI : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+    public void Collection()
+    {
+        SceneManager.LoadScene("CollectionScene");
+    }
 }

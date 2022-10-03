@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CollectionUI : MonoBehaviour
@@ -22,5 +23,10 @@ public class CollectionUI : MonoBehaviour
                 ingredientImage.color = new Color(0, 0, 0, 0.5f);
             }
         }
+    }
+    
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenuScene");
     }
 }

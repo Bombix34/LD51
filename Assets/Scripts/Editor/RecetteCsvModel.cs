@@ -1,6 +1,7 @@
 using CsvHelper.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class RecetteCsvModel
 {
@@ -15,17 +16,24 @@ public class RecetteCsvModel
         var ingredients = IngredientsString.Split(';');
         for (int i = 0; i < ingredients.Length; i += 2)
         {
-            ingredientMandatories.Add(new IngredientMandatory(ingredients[i], ingredients[i + 1] == "TRUE"));
+            try
+            {
+                ingredientMandatories.Add(new IngredientMandatory(ingredients[i], ingredients[i + 1] == "FALSE"));
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
         return ingredientMandatories;
     }
 }
 
 
-public struct IngredientMandatory
+public class IngredientMandatory
 {
     public string Name { get; private set; }
-    public bool Mendatory { get; private set; }
+    public bool Mendatory { get; set; }
     public IngredientMandatory(string name, bool mendatory)
     {
         Name = name;
