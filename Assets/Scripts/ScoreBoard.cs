@@ -132,7 +132,14 @@ public class ScoreBoard : Singleton<ScoreBoard>
         {
             return;
         }
+
         UnlockedDishes.Add(dish);
+
+        if (PlayerPrefs.HasKey(dish.Name))
+        {
+            return;
+        }
+        PlayerPrefs.SetInt(dish.Name, default);
         OnUnlockNewDish?.Invoke(dish);
     }
 }
