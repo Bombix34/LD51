@@ -38,21 +38,25 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
         Ingredients.Remove(ingredient);
     }
 
-    public void FillSlots(List<Transform> newIngredients)
+    public void FillSlots(List<Transform> newIngredients, bool isDraw)
     {
-        StartCoroutine(FillSlotsCoroutine(newIngredients));
+        StartCoroutine(FillSlotsCoroutine(newIngredients, isDraw));
     }
 
-    private IEnumerator FillSlotsCoroutine(List<Transform> newIngredients)
+    private IEnumerator FillSlotsCoroutine(List<Transform> newIngredients, bool isDraw)
     {
         var slotsToRefresh = new List<IngredientSlot>();
-        while (Fridge.gameObject.activeInHierarchy && Fridge.HasEmptySlot && newIngredients.Any())
+
+        if (!isDraw)
         {
-            IngredientSlot curSlot = Fridge.stationSlots.Find(x => x.IsEmpty);
-            var newIngredient = newIngredients.First();
-            newIngredients.Remove(newIngredient);
-            curSlot.IngredientOnSlot = newIngredient;
-            slotsToRefresh.Add(curSlot);
+            while (Fridge.gameObject.activeInHierarchy && Fridge.HasEmptySlot && newIngredients.Any())
+            {
+                IngredientSlot curSlot = Fridge.stationSlots.Find(x => x.IsEmpty);
+                var newIngredient = newIngredients.First();
+                newIngredients.Remove(newIngredient);
+                curSlot.IngredientOnSlot = newIngredient;
+                slotsToRefresh.Add(curSlot);
+            }
         }
 
         for (int i = 0; i < newIngredients.Count; ++i)
@@ -93,11 +97,11 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
 
         foreach (var ingredient in ingredientsDraw)
         {
-            ingredientsTransform.Add(GenerateIngredient(ingredient, new Vector2(0, -15)).transform);
+            ingredientsTransform.Add(GenerateIngredient(ingredient, new Vector2(0, -15), true).transform);
         }
     }
 
-    public Ingredient GenerateIngredient(IngredientScriptableObject ingredientSo, Vector2 spawnPosition)
+    public Ingredient GenerateIngredient(IngredientScriptableObject ingredientSo, Vector2 spawnPosition, bool isDraw = false)
     {
         var ingredient = Instantiate(DefaultIngredient, transform);
         ingredient.transform.SetParent(transform);
@@ -106,7 +110,7 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
         ingredientComponent.IngredientSo = ingredientSo;
         ingredient.GetComponent<SpriteRenderer>().sprite = ingredientSo.Sprite;
         ingredient.GetComponentInChildren<SpriteOutline>().SetupSprite(ingredientSo.Sprite, ingredientSo.Rarity);
-        FillSlots(new List<Transform> { ingredient.transform });
+        FillSlots(new List<Transform> { ingredient.transform }, isDraw);
         return ingredientComponent;
     }
 }

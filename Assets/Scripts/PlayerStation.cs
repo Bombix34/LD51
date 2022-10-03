@@ -18,7 +18,7 @@ public class PlayerStation : MonoBehaviour
     private void Start()
     {
         SetupButtonUSeStation();
-        stationSlots = GetComponentsInChildren<IngredientSlot>().ToList();
+        stationSlots = GetComponentsInChildren<IngredientSlot>(true).ToList();
         Timer.Instance.OnStartTurn += StationSo.HandleNewTurn;
         foreach (var slot in stationSlots)
         {
