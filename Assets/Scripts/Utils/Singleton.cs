@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -68,5 +69,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     private void OnDestroy()
     {
         m_ShuttingDown = true;
+    }
+
+    internal static void ForceReset()
+    {
+        m_ShuttingDown = false;
     }
 }

@@ -85,7 +85,10 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
     {
         foreach (var ingredient in Ingredients)
         {
-            ingredient.DestroyImmediate();
+            if (ingredient != null)
+            {
+                ingredient.DestroyImmediate();
+            }
         }
         Ingredients.Clear();
         foreach (var slot in slots)

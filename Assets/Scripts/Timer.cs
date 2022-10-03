@@ -28,6 +28,10 @@ public class Timer : Singleton<Timer>
     private void StartTurn(bool playSound=true)
     {
         time = TURN_DURATION;
+        if(Level == 0)
+        {
+            SoundManager.ForceReset();
+        }
         ++Level;
         if(playSound)
             SoundManager.Instance.PlaySound(AudioFieldEnum.SFX08_END_LOOP);
