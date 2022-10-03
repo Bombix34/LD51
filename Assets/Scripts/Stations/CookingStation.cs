@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Tools.Managers;
 
 [CreateAssetMenu(fileName = "CookingStation", menuName = "ScriptableObjects/Station/CookingStation", order = 1)]
 public class CookingStation : StationScriptableObject
@@ -27,7 +28,7 @@ public class CookingStation : StationScriptableObject
         return !CookingOngoing;
     }
 
-    public override void Cook(Vector2 spawnPosition)
+    public override void Cook(Vector2 spawnPosition, bool playSound=false )
     {
         if (CookingOngoing)
         {
@@ -38,13 +39,15 @@ public class CookingStation : StationScriptableObject
     IEnumerator CookWithDelay(Vector2 spawnPosition)
     {
         CookingOngoing = true;
+        SoundManager.Instance.PlaySound(AudioFieldEnum.SFX02_COOK_STATION);
         var startTime = Time.time;
         while (Time.time < startTime + CookingDuration)
         {
             CookingTimePassed = Time.time - startTime;
             yield return new WaitForEndOfFrame();
         }
-        base.Cook(spawnPosition);
+        base.Cook(spawnPosition, false);
+        SoundManager.Instance.PlaySound(AudioFieldEnum.SFX03_END_COOK);
         CookingOngoing = false;
     }
 

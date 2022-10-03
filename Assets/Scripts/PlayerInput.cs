@@ -72,7 +72,7 @@ public class PlayerInput : MonoBehaviour
         {
             if(IsTryingToUseStation)
             {
-                cookStation.StationSo.Cook(cookStation.transform.position);
+                cookStation.StationSo.Cook(cookStation.transform.position, true);
             }
             else
             {
@@ -83,7 +83,7 @@ public class PlayerInput : MonoBehaviour
         {
             if(IsTryingToUseStation)
             {
-                cutStation.StationSo.Cook(cutStation.transform.position);
+                cutStation.StationSo.Cook(cutStation.transform.position, true);
             }
             else
             {
@@ -94,7 +94,7 @@ public class PlayerInput : MonoBehaviour
         {
             if(IsTryingToUseStation)
             {
-                mixStation.StationSo.Cook(mixStation.transform.position);
+                mixStation.StationSo.Cook(mixStation.transform.position, true);
             }
             else
             {
@@ -103,25 +103,11 @@ public class PlayerInput : MonoBehaviour
         }
         if(Input.GetKeyDown(inputData.deliveryStationInput))
         {
-            if(IsTryingToUseStation)
-            {
-                //deliveryStation.StationSo.Craft(deliveryStation.transform.position);
-            }
-            else
-            {
-                UpdateStation(deliveryStation);
-            }
+            UpdateStation(deliveryStation);
         }
         if(Input.GetKeyDown(inputData.frigdeStationInput))
         {
-            if(IsTryingToUseStation)
-            {
-              //  fridgeStation.StationSo.Craft(fridgeStation.transform.position);
-            }
-            else
-            {
-                UpdateStation(fridgeStation);
-            }
+            UpdateStation(fridgeStation);
         }
     }
 

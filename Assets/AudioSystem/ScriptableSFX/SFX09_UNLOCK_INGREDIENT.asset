@@ -15,10 +15,11 @@ MonoBehaviour:
   m_AudioMixerGroup: {fileID: -4679998947756953853, guid: 30b7a5854c3244a2dace38433dec802f, type: 2}
   audioSourceType: 3
   m_IsLooping: 0
-  m_Clips: []
+  m_Clips:
+  - {fileID: 8300000, guid: 153a2385841193249bae9636920c383b, type: 3}
   m_Volume:
-    minValue: 0.7972759
-    maxValue: 0.8986379
+    minValue: 0.33164406
+    maxValue: 0.43300605
   m_Pitch:
     minValue: 0.8533418
     maxValue: 1.151093

@@ -14,28 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Datas:
   - m_EnumFieldName: SFX01_CUT_STATION
-    m_AudioEvent: {fileID: 11400000, guid: c19259c312b89b341829d7ba61e8eb11, type: 2}
+    m_AudioEvent: {fileID: 11400000, guid: 3bdf508712742644186ed922ecffa80d, type: 2}
   - m_EnumFieldName: SFX02_COOK_STATION
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: 5fd48955b01cfed4dba614393e8064f3, type: 2}
   - m_EnumFieldName: SFX03_END_COOK
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: 2fb87e5f3a16336489a884181f2efeb2, type: 2}
   - m_EnumFieldName: SFX04_MIX_STATION
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: 70cafe3795c9fcc41b09114482a89dee, type: 2}
   - m_EnumFieldName: SFX05_FRIDGE
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: 3b1391de15c2faa4a966a374da8bd4d5, type: 2}
   - m_EnumFieldName: SFX06_SELECT_INGREDIENT
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: 2718d3fcce09f9f458617126ae61043c, type: 2}
   - m_EnumFieldName: SFX07_DROP_INGREDIENT
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: c19259c312b89b341829d7ba61e8eb11, type: 2}
   - m_EnumFieldName: SFX08_END_LOOP
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: 156f7419239b25842a88371532a3ceab, type: 2}
   - m_EnumFieldName: SFX09_UNLOCK_INGREDIENT
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: 59104620c32c4cd45814b6907ec02db1, type: 2}
   - m_EnumFieldName: SFX10_APRECIATION_BAD
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: b676727bc2fdb674688adcb54be146df, type: 2}
   - m_EnumFieldName: SFX11_APRECIATION_GOOD
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: 19e5329665c15c24c9573a6662fd229d, type: 2}
   - m_EnumFieldName: SFX12_APRECIATION_GREAT
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: aa2f5833b83b6b74da210a2bb3b99483, type: 2}
   - m_EnumFieldName: SFX13_EMPTY_STATION
-    m_AudioEvent: {fileID: 0}
+    m_AudioEvent: {fileID: 11400000, guid: 228102136001b0c4b904592001c8a7b3, type: 2}

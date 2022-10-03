@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using Tools.Managers;
 
 public class IngredientSlot : MonoBehaviour
 {
@@ -11,24 +12,26 @@ public class IngredientSlot : MonoBehaviour
     public Action<Ingredient> OnAddIngredient { get; internal set; }
     public Action<Ingredient> OnRemoveIngredient { get; internal set; }
 
-    private void Start()
-    {
-        PutIngredientOnSlot();
-    }
-
-    public void PutIngredientOnSlot()
+    public void PutIngredientOnSlot(bool playSound=true)
     {
         if(ingredientOnSlot==null)
             return;
+        if(playSound)
+            SoundManager.Instance.PlaySound(AudioFieldEnum.SFX07_DROP_INGREDIENT);
         ingredientOnSlot.DOScale(1f, 0.2f);
         ingredientOnSlot?.DOMove(transform.position, 0.3f).SetEase(Ease.InOutCirc)
-            .OnComplete(()=> ingredientOnSlot.GetComponent<SpriteRenderer>().sortingOrder = 0);
+            .OnComplete(()=> 
+            {
+                ingredientOnSlot.GetComponent<SpriteRenderer>().sortingOrder = 0;
+            }
+            );
     }
 
     public void SelectIngredient()
     {
         if(ingredientOnSlot==null)
             return;
+        SoundManager.Instance.PlaySound(AudioFieldEnum.SFX06_SELECT_INGREDIENT);
         ingredientOnSlot.GetComponent<SpriteRenderer>().sortingOrder = 5;
         ingredientOnSlot.DOScale(1.3f, 0.2f);
     }

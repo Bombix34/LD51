@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using System;
 using System.IO;
+using Tools.Managers;
 
 public class ScoreBoard : Singleton<ScoreBoard>
 {
@@ -46,12 +47,19 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     public void AddScore(int score)
     {
-        if(score <= 0)
+        Debug.Log(Timer.Instance.Level);
+        if(score <= 0 )
         {
+            if(Timer.Instance.Level <= 1)
+                return;
+            SoundManager.Instance.PlaySound(AudioFieldEnum.SFX10_APRECIATION_BAD);
             TakeDamage();
             return;
         }
-
+        if(score > 400)
+            SoundManager.Instance.PlaySound(AudioFieldEnum.SFX11_APRECIATION_GOOD);
+        else
+            SoundManager.Instance.PlaySound(AudioFieldEnum.SFX12_APRECIATION_GREAT);
         Score += score;
         OnAddScore?.Invoke(score);
         while (NextScoreLevel != null && Score >= NextScoreLevel.Score)
@@ -142,6 +150,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
             return;
         }
         PlayerPrefs.SetInt(dish.Name, default);
+        SoundManager.Instance.PlaySound(AudioFieldEnum.SFX09_UNLOCK_INGREDIENT);
         OnUnlockNewDish?.Invoke(dish);
     }
 }

@@ -52,4 +52,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0957cb2ae68705a4384a3b0d50d7a56a, type: 2}
   - {fileID: 11400000, guid: 05d0e7129f1adae418b0ab568018f854, type: 2}
   - {fileID: 11400000, guid: 2b2699aecd7d9cf4a8a476e669d7b62d, type: 2}
+  audioOnCook: 1
   <CookingDuration>k__BackingField: 2

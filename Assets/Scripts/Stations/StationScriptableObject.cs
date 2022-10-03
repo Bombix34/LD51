@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using Tools.Managers;
 
 public abstract class StationScriptableObject : ScriptableObject
 {
@@ -18,12 +19,14 @@ public abstract class StationScriptableObject : ScriptableObject
     protected List<Recipe> Recipes { get; set; }
     public Action OnCleanStation { get; internal set; }
 
+    [SerializeField] private AudioFieldEnum audioOnCook;
+
     public virtual void OnEnable()
     {
         Ingredients = new List<Ingredient>();
     }
 
-    public void AddIngredient(Ingredient ingredient)
+    public virtual void AddIngredient(Ingredient ingredient)
     {
         if (!CanAddIngredient())
         {
@@ -118,7 +121,7 @@ public abstract class StationScriptableObject : ScriptableObject
         return bestRecipesWithPriority?.recipe;
     }
 
-    public virtual void Cook(Vector2 spawnPosition)
+    public virtual void Cook(Vector2 spawnPosition, bool playSound=true)
     {
         if (!Ingredients.Any())
         {
@@ -130,6 +133,10 @@ public abstract class StationScriptableObject : ScriptableObject
         PlayerIngredientsSlots.Instance.GenerateIngredient(ingredient, spawnPosition);
         ScoreBoard.Instance.AddToUnlockedDishes(ingredient);
 
+        if(playSound)
+        {
+            SoundManager.Instance.PlaySound(audioOnCook);
+        }
         CleanIngredients();
     }
 

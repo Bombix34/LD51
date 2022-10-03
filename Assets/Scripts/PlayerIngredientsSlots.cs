@@ -49,7 +49,7 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
         }
         foreach(var slot in slots)
         {
-            slot.PutIngredientOnSlot();
+            slot.PutIngredientOnSlot(false);
             yield return new WaitForSeconds(0.05f);
         }
     }

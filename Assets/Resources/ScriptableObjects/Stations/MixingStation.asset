@@ -31,3 +31,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8a392991638da54e9ee14a0fc8e96d3, type: 2}
   - {fileID: 11400000, guid: 7d536bbcf668b634fa60e9d7327e88c9, type: 2}
   - {fileID: 11400000, guid: d89353a00699236428520bdc6e7aedc4, type: 2}
+  audioOnCook: 3
