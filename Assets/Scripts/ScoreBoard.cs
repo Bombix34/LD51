@@ -20,7 +20,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     public List<ScoreLevel> ScoreLevels { get; set; } = new List<ScoreLevel>
     {
-        new ScoreLevel(50, new List<string>() { "Oeuf cru" }, new List<string>() { "Fridge" }, 1),
+        new ScoreLevel(50, new List<string>() { "Oeuf cru" }, new List<string>(), 1),
         new ScoreLevel(100, new List<string>(), new List<string>(),  2),
         new ScoreLevel(150, new List<string>(),  new List<string>() { "Fridge" }, 2),
         new ScoreLevel(200, new List<string>(),  new List<string>() { "CuttingBoard" }, 2),

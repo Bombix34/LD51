@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Nuggets
   <Categories>k__BackingField: 070000000500000003000000
-  <Rarity>k__BackingField: 3
-  <Score>k__BackingField: 50
+  <Rarity>k__BackingField: 4
+  <Score>k__BackingField: 400
   <Sprite>k__BackingField: {fileID: -5784490913315752214, guid: c1fb72876dee02846a285c9bf2816a18, type: 3}
