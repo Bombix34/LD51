@@ -8,7 +8,7 @@ using System;
 
 public class PlayerStation : MonoBehaviour
 {
-    [SerializeField] private List<IngredientSlot> stationSlots;
+    [SerializeField] public List<IngredientSlot> stationSlots;
     [SerializeField] private Button useStationButton;
     [SerializeField] private int nbMinimumToUseStation=1;
     
@@ -59,13 +59,7 @@ public class PlayerStation : MonoBehaviour
         }
     }
 
-    public bool IsEmptySlot
-    {
-        get 
-        {
-            return stationSlots.Find(x => x.IngredientOnSlot == null) != null;
-        }
-    }
+    public bool HasEmptySlot => stationSlots.Any(x => x.IngredientOnSlot == null);
 
     public List<Transform> StationIngredients
     {

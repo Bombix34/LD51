@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
     private readonly IngredientDraw _ingredientDraw = new IngredientDraw();
     [field: SerializeField]
     public GameObject DefaultIngredient { get; private set; }
+    [field: SerializeField]
+    public PlayerStation Fridge { get; set; }
 
     private void Start()
     {
@@ -42,12 +45,24 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
 
     private IEnumerator FillSlotsCoroutine(List<Transform> newIngredients)
     {
-        for(int i = 0; i < newIngredients.Count; ++i)
+        var slotsToRefresh = new List<IngredientSlot>();
+        while (Fridge.gameObject.activeInHierarchy && Fridge.HasEmptySlot && newIngredients.Any())
+        {
+            IngredientSlot curSlot = Fridge.stationSlots.Find(x => x.IsEmpty);
+            var newIngredient = newIngredients.First();
+            newIngredients.Remove(newIngredient);
+            curSlot.IngredientOnSlot = newIngredient;
+            slotsToRefresh.Add(curSlot);
+        }
+
+        for (int i = 0; i < newIngredients.Count; ++i)
         {
             IngredientSlot curSlot = slots.Find(x => x.IsEmpty);
             curSlot.IngredientOnSlot = newIngredients[i];
+            slotsToRefresh.Add(curSlot);
         }
-        foreach(var slot in slots)
+
+        foreach(var slot in slotsToRefresh)
         {
             slot.PutIngredientOnSlot(false);
             yield return new WaitForSeconds(0.05f);

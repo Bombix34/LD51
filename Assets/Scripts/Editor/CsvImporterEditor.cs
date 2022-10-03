@@ -208,10 +208,7 @@ public class CsvImporterEditor : EditorWindow
         {
             RecetteCsvModel recipe = recipes[i];
             var ingredientsMandatories = recipe.IngredientMandatories;
-            if(recipe.IngredientProduit == "Riz saute")
-            {
 
-            }
             while (ingredientsMandatories.Any(q => !q.Mendatory))
             {
                 var ingredient = ingredientsMandatories.First(q => !q.Mendatory);
