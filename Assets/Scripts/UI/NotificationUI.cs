@@ -21,7 +21,7 @@ public class NotificationUI : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
            // SoundManager.Instance.PlaySound(AudioFieldEnum.SFX01_CUT_STATION);
-            //DisplayNotification(testSprite);
+            DisplayNotification(testSprite);
         }
     }
 
