@@ -14,7 +14,7 @@ public class MainMenuUI : MonoBehaviour
     {
         if(PlayerPrefs.HasKey("HIGH_SCORE"))
         {
-            highScoreText.text = PlayerPrefs.GetInt("HIGH_SCORE").ToString();
+            highScoreText.text = "HIGH SCORE : " + PlayerPrefs.GetInt("HIGH_SCORE").ToString();
         }
         else
         {

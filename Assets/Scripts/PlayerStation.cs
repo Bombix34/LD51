@@ -110,5 +110,6 @@ public class PlayerStation : MonoBehaviour
     public void PlayerStationUseButton()
     {
         StationSo.Cook(transform.position);
+        useStationButton?.transform.DOScale(0f ,0.3f);
     }
 }

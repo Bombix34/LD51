@@ -7,14 +7,10 @@ public class CookingTimerUI : MonoBehaviour
     public CookingStation CookingStation { get; private set; }
     [field: SerializeField]
     public Slider Slider { get; private set; }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private Button useButton;
+
+    private void Update()
     {
         if (CookingStation.CookingOngoing)
         {
@@ -22,10 +18,12 @@ public class CookingTimerUI : MonoBehaviour
             Slider.value = CookingStation.CookingTimePassed;
 
             Slider.gameObject.SetActive(true);
+            useButton.gameObject.SetActive(false);
         }
         else
         {
             Slider.gameObject.SetActive(false);
+            useButton.gameObject.SetActive(true);
         }
     }
 }

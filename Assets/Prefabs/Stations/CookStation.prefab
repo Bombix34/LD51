@@ -554,7 +554,6 @@ GameObject:
   - component: {fileID: 3115619386658047199}
   - component: {fileID: 3115619386658047198}
   - component: {fileID: 2021589778}
-  - component: {fileID: 5698100364693683668}
   m_Layer: 5
   m_Name: TextUI
   m_TagString: Untagged
@@ -659,20 +658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CookingStation>k__BackingField: {fileID: 11400000, guid: 5c4060707ae15624d9e94605872fe74e, type: 2}
   <Slider>k__BackingField: {fileID: 869704583}
---- !u!114 &5698100364693683668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3115619386658047196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35d43212d16be1145896cca93acb6c01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <CookingStation>k__BackingField: {fileID: 11400000, guid: 5c4060707ae15624d9e94605872fe74e, type: 2}
-  <Slider>k__BackingField: {fileID: 869704583}
+  useButton: {fileID: 2491744421602017547}
 --- !u!1 &3115619386931972592
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,11 +858,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
---- !u!4 &7003965029293121780 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5336750470093209323, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
-  m_PrefabInstance: {fileID: 3115619386414308895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7003965029293121781 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5336750470093209322, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
@@ -888,6 +869,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5bc4541a38dc146a2212aa56e3c9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &7003965029293121780 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5336750470093209323, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
+  m_PrefabInstance: {fileID: 3115619386414308895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3115619386934835218
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -36,6 +36,7 @@ public class CookingStation : StationScriptableObject
         }
         cookWithDelayCoroutine = ScoreBoard.Instance.StartCoroutine(CookWithDelay(spawnPosition));
     }
+    
     IEnumerator CookWithDelay(Vector2 spawnPosition)
     {
         CookingOngoing = true;
