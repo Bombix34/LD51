@@ -16,15 +16,6 @@ public class NotificationUI : MonoBehaviour
         ScoreBoard.Instance.OnUnlockNewDish += (ingredient) => DisplayNotification(ingredient.Sprite);
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-           // SoundManager.Instance.PlaySound(AudioFieldEnum.SFX01_CUT_STATION);
-            DisplayNotification(testSprite);
-        }
-    }
-
     public void DisplayNotification(Sprite ingredientLogo)
     {
         GameObject newNotif = Instantiate(notificationPrefab, transform);
