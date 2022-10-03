@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 846647473431326577}
   - component: {fileID: 846647473431326576}
-  - component: {fileID: 846647473431326583}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -47,18 +46,3 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &846647473431326583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846647473431326578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1511476dfb769a439e303802a6429a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputData: {fileID: 11400000, guid: 37b78bcddda467d4282bb6ded7895b23, type: 2}
-  playerIngredientsSlots: {fileID: 0}
-  cookStation: {fileID: 0}
