@@ -8,7 +8,7 @@ using System.IO;
 public class ScoreBoard : Singleton<ScoreBoard>
 {
     public int Score { get; set; } = 0;
-    [SerializeField] private int life = 2;
+    [SerializeField] private int life = 3;
 
     private const string INGREDIENTS_PATH = "ScriptableObjects/Ingredients/";
     public List<IngredientScriptableObject> UnlockedIngredients = new List<IngredientScriptableObject>();
@@ -105,7 +105,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
     internal void TakeDamage()
     {
         --life;
-        if(life <=0)
+        if(life <= 0)
         {
             RegisterHighScore();
             OnGameOver?.Invoke(Score);
@@ -114,6 +114,8 @@ public class ScoreBoard : Singleton<ScoreBoard>
     
     private void RegisterHighScore()
     {
+        if(Score==0)
+            return;
         if(PlayerPrefs.HasKey("HIGH_SCORE"))
         {
             int highScoreRegistered = PlayerPrefs.GetInt("HIGH_SCORE");

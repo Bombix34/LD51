@@ -21,6 +21,7 @@ public class GameOverUI : MonoBehaviour
     {
         gameOverRect.DOAnchorPosY(0f, 0.3f).SetEase(Ease.InOutCirc);
         textScore.text = finalScore.ToString();
+        StartCoroutine(EndGameCoroutine());
     }
 
     private IEnumerator EndGameCoroutine()
