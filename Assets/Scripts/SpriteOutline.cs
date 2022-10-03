@@ -12,21 +12,25 @@ public class SpriteOutline : MonoBehaviour {
 
     private SpriteRenderer spriteRenderer;
 
-    private void OnEnable() {
+    private void OnEnable() 
+    {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         UpdateOutline(true);
     }
 
-    private void OnDisable() {
+    private void OnDisable() 
+    {
         UpdateOutline(false);
     }
 
-    private void Update() {
+    private void Update() 
+    {
         UpdateOutline(true);
     }
 
-    private void UpdateOutline(bool outline) {
+    private void UpdateOutline(bool outline) 
+    {
         MaterialPropertyBlock mpb = new MaterialPropertyBlock();
         spriteRenderer.GetPropertyBlock(mpb);
         mpb.SetFloat("_Outline", outline ? 1f : 0);

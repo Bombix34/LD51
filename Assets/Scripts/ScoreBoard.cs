@@ -8,6 +8,8 @@ public class ScoreBoard : Singleton<ScoreBoard>
 {
     public int Score { get; set; } = 0;
 
+    [SerializeField] private int life = 2;
+
     private const string INGREDIENTS_PATH = "Assets/ScriptableObjects/Ingredients/";
     public List<IngredientScriptableObject> UnlockedIngredients = new List<IngredientScriptableObject>();
     public List<StationScriptableObject> UnlockedStations = new List<StationScriptableObject>();
@@ -29,6 +31,8 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     public Action<int> OnAddScore;
     public Action<ScoreLevel> OnReachingScoreStep;
+
+    public Action<int> OnGameOver;
 
     void Start()
     {
@@ -98,7 +102,26 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     internal void TakeDamage()
     {
-        //TODO LATER
+        --life;
+        if(life <=0)
+        {
+            RegisterHighScore();
+            OnGameOver?.Invoke(Score);
+        }
+    }
+
+    private void RegisterHighScore()
+    {
+        if(PlayerPrefs.HasKey("HIGH_SCORE"))
+        {
+            int highScoreRegistered = PlayerPrefs.GetInt("HIGH_SCORE");
+            if(Score > highScoreRegistered)
+                PlayerPrefs.SetInt("HIGH_SCORE", Score);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("HIGH_SCORE", Score);
+        }
     }
 }
 
