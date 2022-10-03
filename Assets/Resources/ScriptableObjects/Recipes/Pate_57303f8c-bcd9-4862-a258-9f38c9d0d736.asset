@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b314b99231c0e84fa8b50f422f7322a, type: 3}
+  m_Name: Pate_57303f8c-bcd9-4862-a258-9f38c9d0d736
+  m_EditorClassIdentifier: 
+  <StrictIngredients>k__BackingField:
+  - {fileID: 11400000, guid: 1c746a91f44bab447a02ee64a3126d3f, type: 2}
+  - {fileID: 11400000, guid: 5ed494c4ed3c72347b97e84b0b4a478a, type: 2}
+  <InterchangeableIngredientsCategory>k__BackingField: 
+  <IngredientProduced>k__BackingField: {fileID: 11400000, guid: 64a904444c84c994ea90f2ab61e7c0ac, type: 2}
