@@ -25,7 +25,10 @@ public class ScoreBoard : Singleton<ScoreBoard>
         new ScoreLevel(150, new List<string>() { "Boeuf cru" }, new List<string>() { "CookStation" }, 5),
     };
 
+    public List<IngredientScriptableObject> UnlockedDishes { get; private set; } = new List<IngredientScriptableObject>();
+
     public ScoreLevel NextScoreLevel { get; private set; }
+    public Action<IngredientScriptableObject> OnUnlockNewDish { get; set; }
 
     private readonly List<IngredientScriptableObject> newlyAddedIngredients = new List<IngredientScriptableObject>();
 
@@ -82,6 +85,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
         var ingredient = Resources.Load<IngredientScriptableObject>(Path.Combine(INGREDIENTS_PATH, ingredientName));
         UnlockedIngredients.Add(ingredient);
         newlyAddedIngredients.Add(ingredient);
+        AddToUnlockedDishes(ingredient);
     }
 
     private void UnlockStation(string stationName)
@@ -120,6 +124,16 @@ public class ScoreBoard : Singleton<ScoreBoard>
         {
             PlayerPrefs.SetInt("HIGH_SCORE", Score);
         }
+    }
+
+    public void AddToUnlockedDishes(IngredientScriptableObject dish)
+    {
+        if (UnlockedDishes.Contains(dish))
+        {
+            return;
+        }
+        UnlockedDishes.Add(dish);
+        OnUnlockNewDish?.Invoke(dish);
     }
 }
 

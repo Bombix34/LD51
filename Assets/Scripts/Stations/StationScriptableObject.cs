@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
 
 public abstract class StationScriptableObject : ScriptableObject
 {
     private const string INGREDIENTS_PATH = "ScriptableObjects/Ingredients/";
-    
+    private const string QUESTIONABLE_DISH_NAME = "Farine";
+
     [field: SerializeField]
     public string Name { get; set; }
     [field: SerializeField]
@@ -126,17 +126,9 @@ public abstract class StationScriptableObject : ScriptableObject
         }
         var recipe = GetBestRecipe();
 
-        if(recipe == null)
-        {
-            //TODO plat douteux
-            var ingredient = Resources.Load<IngredientScriptableObject>(Path.Combine(INGREDIENTS_PATH, "Farine"));
-            PlayerIngredientsSlots.Instance.GenerateIngredient(ingredient, spawnPosition);
-        }
-        else
-        {
-            PlayerIngredientsSlots.Instance.GenerateIngredient(recipe.IngredientProduced, spawnPosition);
-        }
-
+        var ingredient = recipe?.IngredientProduced ?? Resources.Load<IngredientScriptableObject>(Path.Combine(INGREDIENTS_PATH, QUESTIONABLE_DISH_NAME));
+        PlayerIngredientsSlots.Instance.GenerateIngredient(ingredient, spawnPosition);
+        ScoreBoard.Instance.AddToUnlockedDishes(ingredient);
 
         CleanIngredients();
     }

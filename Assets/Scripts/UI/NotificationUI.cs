@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -12,6 +11,7 @@ public class NotificationUI : MonoBehaviour
     private void Start()
     {
         notifRect.DOAnchorPosY(Screen.height, 0f);
+        ScoreBoard.Instance.OnUnlockNewDish += (ingredient) => DisplayNotification(ingredient.Sprite);
     }
 
     public void DisplayNotification(Sprite ingredientLogo)
