@@ -120,7 +120,7 @@ public class PlayerInput : MonoBehaviour
     {
         if(IngredientSlotSelected)
         {
-            if (station.IsEmptySlot && station.StationSo.CanAddIngredient())
+            if (station.HasEmptySlot && station.StationSo.CanAddIngredient())
             {
                 station.AddIngredientToStation(IngredientSlotSelected.IngredientOnSlot);
                 IngredientSlotSelected.IngredientOnSlot=null;

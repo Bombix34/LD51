@@ -16,14 +16,8 @@ public class RecetteCsvModel
         var ingredients = IngredientsString.Split(';');
         for (int i = 0; i < ingredients.Length; i += 2)
         {
-            try
-            {
-                ingredientMandatories.Add(new IngredientMandatory(ingredients[i], ingredients[i + 1] == "FALSE"));
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
+            ingredientMandatories.Add(new IngredientMandatory(ingredients[i], ingredients[i + 1] == "FALSE"));
+
         }
         return ingredientMandatories;
     }
@@ -48,6 +42,6 @@ public class RecetteCsvModelClassMap : ClassMap<RecetteCsvModel>
     {
         Map(m => m.Station).Name("Station");
         Map(m => m.IngredientsString).Name("Ingredients");
-        Map(m => m.IngredientProduit).Name("Résultat");;
+        Map(m => m.IngredientProduit).Name("Résultat"); ;
     }
 }

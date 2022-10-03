@@ -866,7 +866,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 190.55
+  m_fontSize: 83.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1607,7 +1607,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 244.53
+  m_fontSize: 162.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2504,7 +2504,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 131.9
+  m_fontSize: 58.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2609,6 +2609,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 185963150632873558, guid: 9918b69784fb00a44bd17eeb1d32d416, type: 3}
+      propertyPath: <Fridge>k__BackingField
+      value: 
+      objectReference: {fileID: 8817889200295089464}
     - target: {fileID: 185963150632873558, guid: 9918b69784fb00a44bd17eeb1d32d416, type: 3}
       propertyPath: testIngredients.Array.data[0]
       value: 
