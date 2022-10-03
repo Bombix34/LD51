@@ -136,7 +136,7 @@ public class PlayerInput : MonoBehaviour
         {
             if (station.StationSo.CanRemoveIngredient())
             {
-                playerIngredientsSlots.FillSlots(station.StationIngredients);
+                playerIngredientsSlots.FillSlots(station.StationIngredients, false);
                 station.RemoveIngredientReferences();
             }
         }

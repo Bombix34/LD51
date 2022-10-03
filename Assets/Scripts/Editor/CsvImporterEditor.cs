@@ -132,8 +132,7 @@ public class CsvImporterEditor : EditorWindow
 
             if (int.TryParse(ingredient.Score, out var score))
             {
-                //ingredientScriptableObject.SetScore(score);
-                ingredientScriptableObject.SetScore(50);
+                ingredientScriptableObject.SetScore(score == 0 ? -1 : score);
             }
             else
             {
