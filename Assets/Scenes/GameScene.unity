@@ -2114,6 +2114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275a91be033cbb94ea4868628ddbd696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicMixerGroup: {fileID: -2020143581056808325, guid: 30b7a5854c3244a2dace38433dec802f, type: 2}
   settings: {fileID: 11400000, guid: 64aa8ca61c0f87e49a7847504f428fc2, type: 2}
 --- !u!82 &1810866330
 AudioSource:

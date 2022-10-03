@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 using Tools.Audio;
 using DG.Tweening;
@@ -13,6 +14,7 @@ namespace Tools.Managers
         private AudioSource audioSourceMusic;
         private AudioSource audioSourceUI;
         private AudioSource audioSourceEffects;
+		public AudioMixerGroup musicMixerGroup;
 
         [SerializeField] private SoundManagerSettings settings;
 
@@ -30,6 +32,7 @@ namespace Tools.Managers
             audioSourceMusic_GO.transform.parent = transform;
             audioSourceMusic = audioSourceMusic_GO.AddComponent<AudioSource>();
             audioSourceMusic.playOnAwake = false;
+            audioSourceMusic.outputAudioMixerGroup = musicMixerGroup;
             audioSourceMusic.spatialBlend = 0;
 
             GameObject audioSourceUI_GO = new GameObject("SM_AudioSource_UI");

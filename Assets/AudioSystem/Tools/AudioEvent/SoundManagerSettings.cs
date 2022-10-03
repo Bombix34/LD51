@@ -29,6 +29,7 @@ namespace Tools.Managers
 				{
 					rand = Random.Range(0, musicLoops.Count);
 				}
+				lastLoopIndex = rand;
 				return musicLoops[rand];
 			}
 		}
