@@ -16,9 +16,9 @@ public class CsvImporterEditor : EditorWindow
     private const string INGREDIENTS_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJz0yhsCZ_koHUICcono0vbQhEIOzLH3u44UatbJCtUqZFxnK8Vgqyw_f_jTIY2JcJNLwW7hnAMV89/pub?gid=599060883&single=true&output=csv";
     private const string RECIPES_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJz0yhsCZ_koHUICcono0vbQhEIOzLH3u44UatbJCtUqZFxnK8Vgqyw_f_jTIY2JcJNLwW7hnAMV89/pub?gid=517237446&single=true&output=csv";
 
-    private const string PATH_TO_INGREDIENTS = "Assets/ScriptableObjects/Ingredients/";
-    private const string PATH_TO_RECIPES = "Assets/ScriptableObjects/Recipes/";
-    private const string PATH_TO_STATIONS = "Assets/ScriptableObjects/Stations/";
+    private const string PATH_TO_INGREDIENTS = "Assets/Resources/ScriptableObjects/Ingredients/";
+    private const string PATH_TO_RECIPES = "Assets/Resources/ScriptableObjects/Recipes/";
+    private const string PATH_TO_STATIONS = "Assets/Resources/ScriptableObjects/Stations/";
     private const string PATH_TO_SPRITES = "Assets/Sprites";
     
 

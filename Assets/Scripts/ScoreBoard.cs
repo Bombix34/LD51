@@ -3,14 +3,13 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using System;
+using System.IO;
 
 public class ScoreBoard : Singleton<ScoreBoard>
 {
     public int Score { get; set; } = 0;
 
-    [SerializeField] private int life = 2;
-
-    private const string INGREDIENTS_PATH = "Assets/ScriptableObjects/Ingredients/";
+    private const string INGREDIENTS_PATH = "ScriptableObjects/Ingredients/";
     public List<IngredientScriptableObject> UnlockedIngredients = new List<IngredientScriptableObject>();
     public List<StationScriptableObject> UnlockedStations = new List<StationScriptableObject>();
     [field: SerializeField]
@@ -31,8 +30,6 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     public Action<int> OnAddScore;
     public Action<ScoreLevel> OnReachingScoreStep;
-
-    public Action<int> OnGameOver;
 
     void Start()
     {
@@ -80,8 +77,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     private void UnlockIngredient(string ingredientName)
     {
-        var ingredient = AssetDatabase.LoadAssetAtPath<IngredientScriptableObject>(INGREDIENTS_PATH
-            + ingredientName + ".asset");
+        var ingredient = Resources.Load<IngredientScriptableObject>(Path.Combine(INGREDIENTS_PATH, ingredientName));
         UnlockedIngredients.Add(ingredient);
         newlyAddedIngredients.Add(ingredient);
     }
@@ -102,26 +98,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     internal void TakeDamage()
     {
-        --life;
-        if(life <=0)
-        {
-            RegisterHighScore();
-            OnGameOver?.Invoke(Score);
-        }
-    }
-
-    private void RegisterHighScore()
-    {
-        if(PlayerPrefs.HasKey("HIGH_SCORE"))
-        {
-            int highScoreRegistered = PlayerPrefs.GetInt("HIGH_SCORE");
-            if(Score > highScoreRegistered)
-                PlayerPrefs.SetInt("HIGH_SCORE", Score);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("HIGH_SCORE", Score);
-        }
+        //TODO LATER
     }
 }
 

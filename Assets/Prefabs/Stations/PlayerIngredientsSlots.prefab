@@ -139,10 +139,8 @@ MonoBehaviour:
   - {fileID: 5231879600021381035}
   - {fileID: 5231879600661747401}
   - {fileID: 5231879599945260438}
-  testIngredients:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  <Ingredients>k__BackingField: []
+  <DefaultIngredient>k__BackingField: {fileID: 2235126046263105226, guid: 80acfaca920a8da46a1a2317883942a7, type: 3}
 --- !u!1001 &185963150548641827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,6 +148,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 185963150632873557}
     m_Modifications:
+    - target: {fileID: 2370473568545845952, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
+      propertyPath: concernedInput
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5336750470093209323, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -223,6 +225,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 185963150632873557}
     m_Modifications:
+    - target: {fileID: 2370473568545845952, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
+      propertyPath: concernedInput
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5336750470093209323, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -296,6 +302,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 185963150632873557}
     m_Modifications:
+    - target: {fileID: 2370473568545845952, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
+      propertyPath: concernedInput
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5336750470093209323, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -369,6 +379,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 185963150632873557}
     m_Modifications:
+    - target: {fileID: 2370473568545845952, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
+      propertyPath: concernedInput
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5336750470093209323, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -442,6 +456,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 185963150632873557}
     m_Modifications:
+    - target: {fileID: 2370473568545845952, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
+      propertyPath: concernedInput
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5336750470093209323, guid: 436c4b39b7abd5940b230fac2fd06ac6, type: 3}
       propertyPath: m_RootOrder
       value: 2
