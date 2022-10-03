@@ -13,9 +13,29 @@ MonoBehaviour:
   m_Name: 0_AudioDatabase
   m_EditorClassIdentifier: 
   m_Datas:
-  - m_EnumFieldName: SFX_EXEMPLE_01
+  - m_EnumFieldName: SFX01_CUT_STATION
+    m_AudioEvent: {fileID: 11400000, guid: c19259c312b89b341829d7ba61e8eb11, type: 2}
+  - m_EnumFieldName: SFX02_COOK_STATION
     m_AudioEvent: {fileID: 0}
-  - m_EnumFieldName: SFX_EXEMPLE_02
+  - m_EnumFieldName: SFX03_END_COOK
     m_AudioEvent: {fileID: 0}
-  - m_EnumFieldName: SFX_EXEMPLE_03
+  - m_EnumFieldName: SFX04_MIX_STATION
+    m_AudioEvent: {fileID: 0}
+  - m_EnumFieldName: SFX05_FRIDGE
+    m_AudioEvent: {fileID: 0}
+  - m_EnumFieldName: SFX06_SELECT_INGREDIENT
+    m_AudioEvent: {fileID: 0}
+  - m_EnumFieldName: SFX07_DROP_INGREDIENT
+    m_AudioEvent: {fileID: 0}
+  - m_EnumFieldName: SFX08_END_LOOP
+    m_AudioEvent: {fileID: 0}
+  - m_EnumFieldName: SFX09_UNLOCK_INGREDIENT
+    m_AudioEvent: {fileID: 0}
+  - m_EnumFieldName: SFX10_APRECIATION_BAD
+    m_AudioEvent: {fileID: 0}
+  - m_EnumFieldName: SFX11_APRECIATION_GOOD
+    m_AudioEvent: {fileID: 0}
+  - m_EnumFieldName: SFX12_APRECIATION_GREAT
+    m_AudioEvent: {fileID: 0}
+  - m_EnumFieldName: SFX13_EMPTY_STATION
     m_AudioEvent: {fileID: 0}

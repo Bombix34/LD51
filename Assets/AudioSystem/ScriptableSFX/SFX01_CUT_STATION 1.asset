@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf35d8fc3f884871bba8933d5b9d6cd, type: 3}
+  m_Name: SFX01_CUT_STATION 1
+  m_EditorClassIdentifier: 
+  m_AudioMixerGroup: {fileID: -4679998947756953853, guid: 30b7a5854c3244a2dace38433dec802f, type: 2}
+  audioSourceType: 3
+  m_IsLooping: 0
+  m_Clips:
+  - {fileID: 8300000, guid: 70d13ef6070e9e847b48bb1491aa2297, type: 3}
+  - {fileID: 8300000, guid: e0472e1a478f642449a812258d60ea2a, type: 3}
+  m_Volume:
+    minValue: 0.7972759
+    maxValue: 0.8986379
+  m_Pitch:
+    minValue: 0.8533418
+    maxValue: 1.151093
