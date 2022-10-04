@@ -11,10 +11,12 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI highScoreText;
 
     [SerializeField] private RectTransform collectionRect;
+    [SerializeField] private RectTransform tutoRect;
 
     private void Start()
     {
         collectionRect.DOAnchorPosY(Screen.height, 0f);
+        tutoRect.DOAnchorPosY(Screen.height, 0f);
         if(PlayerPrefs.HasKey("HIGH_SCORE"))
         {
             highScoreText.text = "HIGH SCORE : " + PlayerPrefs.GetInt("HIGH_SCORE").ToString();
@@ -40,7 +42,14 @@ public class MainMenuUI : MonoBehaviour
             collectionRect.DOAnchorPosY(0f, 0.3f);
         else
             collectionRect.DOAnchorPosY(Screen.height, 0.3f);
-            
+    }
 
+    public void DisplayTutorial(bool isDisplayed)
+    {
+        Debug.Log("ALOOOOOO");
+        if(isDisplayed)
+            tutoRect.DOAnchorPosY(0f, 0.3f);
+        else
+            tutoRect.DOAnchorPosY(Screen.height, 0.3f);
     }
 }
