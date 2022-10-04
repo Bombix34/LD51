@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Fridge
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Fridge
-  <Ingredients>k__BackingField:
-  - {fileID: 0}
+  <Ingredients>k__BackingField: []
   <Recipes>k__BackingField: []
   audioOnCook: 4

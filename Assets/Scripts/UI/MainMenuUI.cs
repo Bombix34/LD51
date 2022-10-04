@@ -46,7 +46,6 @@ public class MainMenuUI : MonoBehaviour
 
     public void DisplayTutorial(bool isDisplayed)
     {
-        Debug.Log("ALOOOOOO");
         if(isDisplayed)
             tutoRect.DOAnchorPosY(0f, 0.3f);
         else
