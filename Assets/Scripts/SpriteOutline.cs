@@ -6,6 +6,7 @@ public class SpriteOutline : MonoBehaviour {
     public Color outlineColor = Color.white;
 
     [SerializeField] private List<Color> rarityColors;
+    [SerializeField] private Color badDishColor;
 
     [Range(0, 32)]
     public int outlineSize = 1;
@@ -63,5 +64,11 @@ public class SpriteOutline : MonoBehaviour {
                 break;
         }
         */
+    }
+
+    public void SetupBadDish(Sprite newSprite)
+    {
+        spriteRenderer.sprite = newSprite;
+        outlineColor = badDishColor;
     }
 }

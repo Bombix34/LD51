@@ -112,7 +112,10 @@ public class PlayerIngredientsSlots : Singleton<PlayerIngredientsSlots>
         var ingredientComponent = ingredient.GetComponent<Ingredient>();
         ingredientComponent.IngredientSo = ingredientSo;
         ingredient.GetComponent<SpriteRenderer>().sprite = ingredientSo.Sprite;
-        ingredient.GetComponentInChildren<SpriteOutline>().SetupSprite(ingredientSo.Sprite, ingredientSo.Rarity);
+        if(ingredientSo.name =="QuestionnableDish")
+            ingredient.GetComponentInChildren<SpriteOutline>().SetupBadDish(ingredientSo.Sprite);
+        else
+            ingredient.GetComponentInChildren<SpriteOutline>().SetupSprite(ingredientSo.Sprite, ingredientSo.Rarity);
         FillSlots(new List<Transform> { ingredient.transform }, isDraw);
         return ingredientComponent;
     }

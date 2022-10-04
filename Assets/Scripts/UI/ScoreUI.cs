@@ -11,6 +11,8 @@ public class ScoreUI : MonoBehaviour
     [SerializeField] private Image sliderFill;
     private Color sliderColor;
 
+    private bool isUpdatingScoreBar = false;
+
     private void Start()
     {
         scoreBoard = ScoreBoard.Instance;
@@ -22,14 +24,23 @@ public class ScoreUI : MonoBehaviour
 
     private void UpdateSlider(int scoreAdded)
     {
-        scoreSlider.transform.DOPunchScale(Vector3.one*0.2f, 0.5f).SetEase(Ease.OutCirc);
-        scoreSlider.DOValue(scoreBoard.Score, 0.5f).SetEase(Ease.InOutElastic);
+        isUpdatingScoreBar = true;
+        scoreSlider.DOValue(scoreBoard.Score, 0.3f).SetEase(Ease.InOutElastic)
+            .OnComplete(()=> isUpdatingScoreBar = false);
         sliderFill.color = Color.white;
         sliderFill.DOColor(sliderColor, 0.2f);
     }
 
     private void ResetSlider(ScoreLevel nextScoreLevel)
     {
+        StartCoroutine(ResetSliderCoroutine(nextScoreLevel));
+    }
+
+    private IEnumerator ResetSliderCoroutine(ScoreLevel nextScoreLevel)
+    {
+        while(isUpdatingScoreBar)
+            yield return new WaitForSeconds(0.1f);
+        scoreSlider.transform.DOPunchScale(Vector3.one*0.1f, 0.5f).SetEase(Ease.OutCirc);
         scoreSlider.DOValue(0f, 0.3f)
             .OnComplete(()=>
             {

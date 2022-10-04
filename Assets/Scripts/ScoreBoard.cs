@@ -47,6 +47,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
     public Action<int> OnAddScore;
     public Action<ScoreLevel> OnReachingScoreStep;
     public Action<int> OnGameOver;
+    public Action OnPlayerLoseLife;
 
     void Start()
     {
@@ -132,6 +133,7 @@ public class ScoreBoard : Singleton<ScoreBoard>
     internal void TakeDamage()
     {
         --life;
+        OnPlayerLoseLife?.Invoke();
         if(life <= 0)
         {
             RegisterHighScore();
