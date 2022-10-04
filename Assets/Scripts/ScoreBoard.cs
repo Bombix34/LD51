@@ -20,21 +20,21 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     public List<ScoreLevel> ScoreLevels { get; set; } = new List<ScoreLevel>
     {
-        new ScoreLevel(50, new List<string>() { "Oeuf cru" }, new List<string>(), 1),
+        new ScoreLevel(50, new List<string>() { "Poulet cru" }, new List<string>(), 1),
         new ScoreLevel(100, new List<string>(), new List<string>(),  2),
         new ScoreLevel(150, new List<string>(),  new List<string>() { "Fridge" }, 2),
-        new ScoreLevel(200, new List<string>(),  new List<string>() { "CuttingBoard" }, 2),
-        new ScoreLevel(250, new List<string>() { "Poulet cru" },  new List<string>(), 2),
-        new ScoreLevel(400, new List<string>() { "Farine" },  new List<string>(), 2),
-        new ScoreLevel(550, new List<string>(),  new List<string>() { "Fridge" }, 2),
-        new ScoreLevel(750, new List<string>(),  new List<string>() { "MixingStation" }, 2),
-        new ScoreLevel(1000, new List<string>() { "Boeuf cru" },  new List<string>(), 2),
-        new ScoreLevel(1250, new List<string>() { "Patate crue" },  new List<string>(), 2),
-        new ScoreLevel(1500, new List<string>(),  new List<string>(), 2),
-        new ScoreLevel(2000, new List<string>() { "Lait" },  new List<string>(), 3),
-        new ScoreLevel(3000, new List<string>() { "Saumon cru" },  new List<string>(), 3),
-        new ScoreLevel(4000, new List<string>(),  new List<string>() { "Fridge" }, 3),
-        new ScoreLevel(5000, new List<string>() { "Riz cru" },  new List<string>(), 3),
+        new ScoreLevel(250, new List<string>() { "Patate crue" },  new List<string>(), 2),
+        new ScoreLevel(400, new List<string>(),  new List<string>() { "CuttingBoard" }, 2),
+        new ScoreLevel(600, new List<string>() { "Farine" },  new List<string>(), 2),
+        new ScoreLevel(800, new List<string>(),  new List<string>() { "Fridge" }, 2),
+        new ScoreLevel(1000, new List<string>(),  new List<string>() { "MixingStation" }, 2),
+        new ScoreLevel(1250, new List<string>() { "Oeuf cru" },  new List<string>(), 2),
+        new ScoreLevel(1500, new List<string>() { "Boeuf cru" },  new List<string>(), 2),
+        new ScoreLevel(1800, new List<string>(),  new List<string>(), 2),
+        new ScoreLevel(2200, new List<string>() { "Lait" },  new List<string>(), 3),
+        new ScoreLevel(2800, new List<string>() { "Saumon cru" },  new List<string>(), 3),
+        new ScoreLevel(3500, new List<string>(),  new List<string>() { "Fridge" }, 3),
+        new ScoreLevel(4200, new List<string>() { "Riz cru" },  new List<string>(), 3),
     };
 
     public List<IngredientScriptableObject> UnlockedDishes { get; private set; } = new List<IngredientScriptableObject>();
